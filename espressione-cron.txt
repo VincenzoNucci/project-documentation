@@ -1,0 +1,1 @@
+﻿<secondi> <minuti> <ore> <giorno-del-mese> <mese> <giorno della settimana> [anno]

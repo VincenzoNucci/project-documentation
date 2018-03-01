@@ -1,0 +1,10 @@
+{
+	"type":"record",
+	"name":"ExceptionMessageHandler",
+	"namespace":"ls.iot.web.services.it",
+	"fields":[
+		{"name":"level","type":"string"},
+		{"name":"errcode","type":"string"},
+		{"name":"desc","type":"string"}
+	]
+}

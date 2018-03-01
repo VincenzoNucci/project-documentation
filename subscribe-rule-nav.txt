@@ -1,0 +1,25 @@
+{
+    "namespace":"ls.iot.client.nav",
+    "type":"record",
+    "name":"SubscribeRule",
+    "fields":[
+      {"name": "appName", "type": "string"},             
+      {"name": "appIp", "type": "string"},
+      {"name": "queueName", "type": "string"},
+      {"name": "topicName", "type": "string"},
+      {"name":"Rule","type": {
+		"name":"RuleRecord",
+		"type": "record",
+		"fields":[
+			{"name":"table", "type":"string"},
+			{"name":"selectFields", "type":{
+				"type":"array", "items":"string"
+				}
+			},
+			{"name":"cron", "type":"string"},
+			{"name":"formula","type":"string"}
+			]
+			}
+		}
+	]
+}

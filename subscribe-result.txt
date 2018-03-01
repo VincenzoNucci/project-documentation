@@ -1,0 +1,9 @@
+{
+	"type":"record",
+	"name":"SubscribeResult",
+	"namespace":"ls.iot.web.services.it",
+	"fields":[
+		{"name":"result","type":"string"},
+		{"name":"ruleid","type":"int"}
+	]
+}

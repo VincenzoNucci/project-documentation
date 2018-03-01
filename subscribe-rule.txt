@@ -1,0 +1,152 @@
+[
+{
+	"namespace":"ls.iot.web.services.it",
+	"name":"ArithmeticOperator",
+	"type":"enum",
+	"symbols":["add","sub","mul","div","mod"],
+	"doc":"Singole operazioni aritmetiche consentite."
+},
+{
+	"namespace":"ls.iot.web.services.it",
+	"name":"BitwiseOperator",
+	"type":"enum",
+	"symbols":["bitwiseand","bitwiseor","bitwisexor"],
+	"doc":"Singole operazioni aritmetiche consentite."
+},
+{
+	"namespace":"ls.iot.web.services.it",
+	"name":"CompoundOperator",
+	"type":"enum",
+	"symbols":["bitwiseand","bitwiseor","bitwisexor"],
+	"doc":"Singole operazioni composte consentite."
+},
+{
+	"namespace":"ls.iot.web.services.it",
+	"name":"ComparisonOperator",
+	"type":"enum",
+	"symbols":["gt","lt","lte","gte","eq","neq"],
+	"doc":"Singole operazioni di confronto consentite."
+},
+{
+	"namespace":"ls.iot.web.services.it",
+	"name":"BynaryLogicalOperator",
+	"type":"enum",
+	"symbols":["and","or","between","in","like"],
+	"doc":"Operatori logici consentiti."
+},
+{
+	"namespace":"ls.iot.web.services.it",
+	"name":"BeforeLogicalOperator",
+	"type":"enum",
+	"symbols":["any","all","some","exists"],
+	"doc":"Operatori logici consentiti."
+},
+{
+	"namespace":"ls.iot.web.services.it",
+	"name":"Operation",
+	"type":"record",
+	"fields":[
+		{"name":"Operand1","type":["string","double","int"],"doc":"Primo operando dell'operazione."},
+		{"name":"Operator","type":["ArithmeticOperator","BitwiseOperator","CompoundOperator","ComparisonOperator"],"doc":"Operazione da effettuare."},
+		{"name":"Operand2","type":["string","double","int"],"doc":"Secondo operando dell'operazione."}
+	]
+},
+{
+	"namespace":"ls.iot.web.services.it",
+	"name":"SubQueryOperation",
+	"type":"record",
+	"fields":[
+		{"name":"fields","type":"string","doc":"."},
+		{"name":"table","type":"string","doc":"."},
+		{"name":"joins","type":"string","doc":"."},
+		{"name":"where","type":"string","doc":"."}
+	]
+},
+{
+	"namespace":"ls.iot.web.services.it",
+	"name":"SimpleOperation",
+	"type":"record",
+	"fields":[
+		{"name":"operation","type":["Operation"],"doc":"Semplice operazione singola."}
+	]
+},
+{
+	"namespace":"ls.iot.web.services.it",
+	"name":"BeforeLogicalOperatorOperation",
+	"type":"record",
+	"fields":[
+		{"name":"applynotformula","type":"boolean","doc":"Indica se l'operazione logica deve essere valutata come negazione."},
+		{"name":"logicaloperator","type":"BeforeLogicalOperator","doc":"Operatore logico da applicare."},
+		{"name":"formula","type":"SubQueryOperation","doc":"Secondo operando, pu\`{o} essere una semplice operazione o una operazione con operando logico"}
+	]
+},
+{
+	"namespace":"ls.iot.web.services.it",
+	"name":"BynaryLogicalOperatorOperation",
+	"type":"record",
+	"fields":[
+		{"name":"applynotformula1","type":"boolean","doc":"Indica se l'operazione logica deve essere valutata come negazione."},
+		{"name":"formula1","type":["string","BynaryLogicalOperatorOperation","BeforeLogicalOperatorOperation","SimpleOperation"],"doc":"Primo operando, pu\`{o} essere una semplice operazione o una operazione con operando logico"},
+		{"name":"logicaloperator","type":"BynaryLogicalOperator","doc":"Operatore logico da applicare."},
+		{"name":"applynotformula2","type":"boolean","doc":"Indica se l'operazione logica deve essere valutata come negazione."},
+		{"name":"formula2","type":["string","BynaryLogicalOperatorOperation","BeforeLogicalOperatorOperation","SimpleOperation"],"doc":"Secondo operando, pu\`{o} essere una semplice operazione o una operazione con operando logico"}
+	]
+},
+{
+	"namespace":"ls.iot.web.services.it",
+	"name":"FormulaOperation",
+	"type":"record",
+	"fields":[
+		{"name":"operation","type":["BynaryLogicalOperatorOperation","BeforeLogicalOperatorOperation","SimpleOperation"],"doc":"La formula descritta come una operazione singola o pi\`{u} operazioni composte."}
+	]
+},
+{
+	"namespace":"ls.iot.web.services.it",
+	"name":"Formula",
+	"type":"record",
+	"fields":[
+		{
+			"name":"formula",
+			"type":["FormulaOperation"],
+			"doc":"La formula della regola."
+		}
+	]
+},
+{
+    "namespace":"ls.iot.web.services.it",
+    "type":"record",
+    "name":"SubscribeRule",
+    "fields":[
+      {"name": "appName", "type": "string","doc":"Nome dell'appliczione."},             
+      {"name": "appIp", "type": "string","doc":"IP dell'applicazione."},
+      {"name": "queueName", "type": "string","doc":"Nome della coda in cui verranno inviati i nuovi dati."},
+      {"name": "topicName", "type": "string","doc":"Nome del topic in cui verranno inviati i nuovi dati."},
+      {"name":"Rule","type": {
+		"name":"RuleRecord",
+		"type": "record",
+		"fields":[
+			{"name":"table", "type":"string","doc":"Tabella che verr\`{a} interrogata."},
+			{"name":"selectFields", "type":{
+				"type":"array", "items":"string"
+				},
+				"doc":"Campi della tabella che verranno restituiti popolati in caso di modifiche rilevate."
+			},
+			{"name":"cron", "type":"string","doc":"Intervallo di tempo in CRON che indica ogni quanto verranno controllati nuovi dati."},
+			{
+				"name":"condition",
+				"type":["null","Formula"],
+				"default":null,
+				"doc":"Condizione di controllo (SQL WHERE) descritta con record annidati."
+			},
+			{
+				"name":"formula",
+				"type":"string",
+				"doc":"Condizione di controllo (SQL WHERE) descritta come stringa"
+			}
+		],
+		"doc":"Regola di sottoscrizione al servizio."
+	  },"doc":"Regola di sottoscrizione al servizio."
+	 }
+]
+}
+]
