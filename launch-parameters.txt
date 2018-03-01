@@ -1,0 +1,10 @@
+-host
+-port
+-db
+-ow
+--platform-ip
+--platform-port
+--platform-db
+-username
+-password
+-broker
