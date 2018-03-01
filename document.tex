@@ -445,14 +445,21 @@ Per poter effettuare il servizio di sottoscrizione in NAV è stata generata la p
 
 \section{Manualistica}
 \subsection{Installazione e avvio piattaforma}
-La piattaforma si presenta come un jar eseguibile. è necessario fornire parametri di input. i parametri sono:
-{\fontfamily{pcr}\selectfont
-	\lstinputlisting[breaklines]{launch-parameters.txt}
-}
-Un esempio per lanciare la piattaforma in locale è rappresentato in figura 18
+La piattaforma si presenta come un jar eseguibile. è necessario fornire parametri di input. Un esempio per lanciare la piattaforma in locale è rappresentato in figura 18
 \begin{figure}[h]
 			\centering
 			\includegraphics[width=0.8\textwidth]{lancio-piattaforma.png}
 			\caption*{Figura 18. Avvio della piattaforma con parametri}
 \end{figure}
+
+i parametri sono:
+{\fontfamily{pcr}\selectfont
+	\lstinputlisting[breaklines]{launch-parameters.txt}
+}
+il parametro host definisce l'indirizzo ip sul quale sarà in esecuzione la piattaforma; allo stesso modo il parametro port definisce la porta.
+Il parametro db indica il path del database sqlite di amministrazione. se il database non esiste al percorso specificato viene creato automaticamente con un profilo amministratore di default. il comando ow sta è un'abbreviazione di overwrite e indica se deve essere sovrascritto con un nuovo database di default il database che già esiste nel path specificato. se ow è presente il database viene sovrascritto.
+i tre parametri che contengono la parola platform indicano rispettivamente in ordine di comparsa: indirizzo ip, porta e nome del database relativi al server in cui il database con i dati dei sensori è in esecuzione.
+username e password sono le credenziali con le quali avviene il collegamento al database con i dati. sono opzionali. infine broker indica l'indirizzo ip al quale il servizio activemq è in esecuzione. se il parametro non è presente viene lanciato il broker embedded della piattaforma.
+\subsection{Installazione servizio ActiveMQ esterno}
+
 \end{document}
