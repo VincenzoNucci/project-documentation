@@ -38,6 +38,7 @@
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{courier}
+\usepackage{textcomp}
 \usepackage{verbatim}
 \usepackage[utf8x]{inputenc}
 \usepackage{listings}
@@ -323,7 +324,7 @@ In Avro i nomi consentiti per i campi possono iniziare soltanto con le lettere a
 Usiamo Avro anche per la regola di Subscribe in modo da avere una soluzione robusta e sicura, ed avere un controllo immediato per quanto riguarda la ricezione di Json malformati: nel momento in cui il Json arriva al server, è in formato stringa senza nessun controllo. Viene poi convertito in un byte array, il formato serializzato che Avro può interpretare, seguendo proprio lo schema Avro. In questo modo si riesce poi a istanziare un oggetto che rappresenta una regola di subscribe. In questo modo si può elaborare una regola, quindi creare un thread sul server, creare una coda nel broker,… prendendo i dati dalle proprietà get dell’oggetto anziché effettuare il parsing manualmente dalla stringa Json.
 
 \section{Servizio di Subscribe}
-Il servizio di subscribe è composto da un oggetto Executor che organizza un “pool” di thread, di numero indefinito, la quale esecuzione verrà gestita dall’executor stesso. Un thread rappresenta l’oggetto che ha il compito di gestire una singola regola ricevuta dal servizio. La gestione dei thread rimane possibile grazie al metodo submit dell executor che restituisce un Future<?>. Questo tipo di oggetto rappresenta lo stato di esecuzione di un thread e grazie a questo è possibile fermarlo in qualsiasi momento chiamando il metodo terminate. Cosi è come funziona il servizio di Unsubscribe. La struttura dati che gestisce il Subscribe è una hashmap che associa all’id della regola ricevuta dal servizio il thread che andrà a gestirla. 
+Il servizio di subscribe è composto da un oggetto Executor che organizza un “pool” di thread, di numero indefinito, la quale esecuzione verrà gestita dall’executor stesso. Un thread rappresenta l’oggetto che ha il compito di gestire una singola regola ricevuta dal servizio. La gestione dei thread rimane possibile grazie al metodo submit dell executor che restituisce un Future$\langle?\rangle{}$. Questo tipo di oggetto rappresenta lo stato di esecuzione di un thread e grazie a questo è possibile fermarlo in qualsiasi momento chiamando il metodo terminate. Cosi è come funziona il servizio di Unsubscribe. La struttura dati che gestisce il Subscribe è una hashmap che associa all’id della regola ricevuta dal servizio il thread che andrà a gestirla. 
 
 Il server una volta che riesce a mandare in esecuzione correttamente un thread, restituisce un Json che indica se l’operazione è andata a buon fine. Lo schema di questo oggetto SubscribeResult è il seguente.
 \begin{center}
@@ -375,7 +376,7 @@ Le espressioni cron sono utilizzate in ambienti Unix-like per eseguire una deter
 Dove l’anno è facoltativo. In cron è possibile inserire dei caratteri speciali come il ? (indicante nessun valore) e * (indicante ogni valore ammesso dall’intervallo).
 
 \section{Architettura Lato Client}
-Nell’architettura generale è previsto l’utilizzo di un client che è sempre attivo e rimane in attesa dell’embedded broker activemq che lo notifica con nuovi dati. Nel momento in cui questa applicazione viene interfacciata con Microsoft Dynamics NAV si hanno delle difficoltà in quanto non vi è la possibilità di ricevere dati in maniera push direttamente ma è necessario passare per un ulteriore step: l’utilizzo di un webservice SOAP da NAV\footnote{https://blogs.msdn.microsoft.com/freddyk/2010/01/19/connecting-to-nav-web-services-from-java/} con il quale è consentito esternare codeunit, pagine e query. In questo modo tramite il WSDL è possibile compilare automaticamente un client per quel webservice e interagire direttamente con quel servizio. Sarà così possibile la ricezione di dati sempre aggiornati successivamente alla sottoscrizione del servizio in base ad una regola specificata dall’utente senza dover necessariamente utilizzare tecniche di pooling (con cui continuo a chiamare costantemente il server per sapere se vi sono nuovi dati).
+Nell’architettura generale è previsto l’utilizzo di un client che è sempre attivo e rimane in attesa dell’embedded broker activemq che lo notifica con nuovi dati. Nel momento in cui questa applicazione viene interfacciata con Microsoft Dynamics NAV si hanno delle difficoltà in quanto non vi è la possibilità di ricevere dati in maniera push direttamente ma è necessario passare per un ulteriore step: l’utilizzo di un webservice SOAP da NAV\footnote{https://blogs.msdn.microsoft.com/freddyk/2010/01/19/connecting-to-nav-web-services-from-java/} con il quale è consentito esternare codeunit, pagine e query. In questo modo tramite il WSDL è possibile compilare automaticamente un client per quel webservice e interagire direttamente con quel servizio. Sarà così possibile la ricezione di dati sempre aggiornati successivamente alla sottoscrizione del servizio in base ad una regola specificata dall’utente senza dover necessariamente utilizzare tecniche di polling (con cui continuo a chiamare costantemente il server per sapere se vi sono nuovi dati).
 \subsection{Breve Introduzione su Microsoft Dynamics NAV}
 Microsoft Dynamics NAV è un software gestionale pubblicato da Microsoft. Esso consente alle imprese una completa gestione della contabilità e del magazzino tramite tabelle e pagine, dispone di un sistema centralizzato con autorizzazioni in modo che solo determinati utenti possano accedere a determinate aree di lavoro. NAV è suddiviso in client e ambiente di sviluppo (development environment) : nel client è possibile inserire e visualizzare dati, mentre nell’ambiente di sviluppo è possibile inserire codice C\textbackslash AL e costruire oggetti che poi verranno utilizzati nel client. Sia client che development environment lavorano su uno stesso servizio il quale deve essere disponibile su un server NAV. \newline
 Gli oggetti costruibili nell’ambiente di sviluppo di Microsoft Dynamics NAV sono: 
@@ -444,7 +445,7 @@ L’approccio legato ai PLC è stato fatto per rendere il PLC stesso uno “smar
 Per poter effettuare il servizio di sottoscrizione in NAV è stata generata la pagina SubscriptionPage, nella quale è presente la possibilità di scrivere le condizioni sulle quali si vogliono i dati (la clausola con cui si faranno chiamate in SQL), e si lancia una page action collegata alla codeunit con la quale si effettua il metodo di sottoscrizione in base alle informazioni riportate in input. Una volta ricevuta la risposta, in caso di esito affermativo, si prende il numero della sottoscrizione e si setta in tabella, impostando inoltre lo stato come attivo. Per cancellare una sottoscrizione è possibile dunque utilizzare la page action unsubscribe che partendo dal dato messo in tabella come ID Sottoscrizione lo invia alla piattaforma che procederà dunque a cancellare la sottoscrizione relativa. 
 
 \section{Manualistica}
-\subsection{Installazione e avvio piattaforma}
+\subsection{Installazione e avvio della piattaforma}
 La piattaforma si presenta come un jar eseguibile. è necessario fornire parametri di input. Un esempio per lanciare la piattaforma in locale è rappresentato in figura 18
 \begin{figure}[h]
 			\centering
@@ -461,5 +462,10 @@ Il parametro db indica il path del database sqlite di amministrazione. se il dat
 i tre parametri che contengono la parola platform indicano rispettivamente in ordine di comparsa: indirizzo ip, porta e nome del database relativi al server in cui il database con i dati dei sensori è in esecuzione.
 username e password sono le credenziali con le quali avviene il collegamento al database con i dati. sono opzionali. infine broker indica l'indirizzo ip al quale il servizio activemq è in esecuzione. se il parametro non è presente viene lanciato il broker embedded della piattaforma.
 \subsection{Installazione servizio ActiveMQ esterno}
-
+Per installare il servizio di activemq è necessario scompattare la cartella che si scarica all'indirizzo http://activemq.apache.org/activemq-5153-release.html. Fatto questo, deve essere lanciato il servizio di activemq da terminale tramite il comando "\\posizione del file\\activemq start".
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{activemq-in-esecuzione.png}
+	\caption*{Figura 19. Istanza di activemq in esecuzione}
+\end{figure}
 \end{document}

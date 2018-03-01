@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.27)  1 MAR 2018 15:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.27)  1 MAR 2018 18:36
 entering extended mode
 **./document.tex
 (document.tex
@@ -117,6 +117,88 @@ LaTeX Info: Redefining \] on input line 2818.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\courier.sty"
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
@@ -503,18 +585,25 @@ LaTeX Info: Redefining \addtolength on input line 81.
 ) (document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 51.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 51.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
@@ -594,10 +683,10 @@ ABD: EveryShipout initializing macros
 <images/logo.png, id=4, 83.3514pt x 103.587pt>
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 61. on input line 
-61.
+Package pdftex.def Info: images/logo.png  used on input line 62. on input line 
+62.
 Package pdftex.def Info: Requested size: 83.35117pt x 103.58675pt on input line
- 61.
+ 62.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
@@ -607,27 +696,26 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 png (PNG copy)>]
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-) [1]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 118.
-
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 118.
- [2
+) [1] [2
 
 ]
 <images/architettura-piattaforma.png, id=25, 588.1975pt x 444.66125pt>
 File: images/architettura-piattaforma.png Graphic file (type png)
 <use images/architettura-piattaforma.png>
 Package pdftex.def Info: images/architettura-piattaforma.png  used on input lin
-e 136. on input line 136.
+e 137. on input line 137.
 Package pdftex.def Info: Requested size: 375.80544pt x 284.1005pt on input line
- 136.
+ 137.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 167.
 
-Underfull \hbox (badness 2173) in paragraph at lines 166--166
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
+
+Underfull \hbox (badness 2173) in paragraph at lines 167--167
 []\OMS/cmsy/m/n/10 f\OT1/cmr/m/it/10 nome ap-pli-cazione\OT1/cmr/m/n/10 , \OT1/
 cmr/m/it/10 IP ap-pli-
  []
@@ -635,97 +723,97 @@ cmr/m/it/10 IP ap-pli-
 [3
 
  <./images/architettura-piattaforma.png>] [4]
-<images/tabelle-backend.png, id=33, 953.5625pt x 375.4025pt>
+<images/tabelle-backend.png, id=34, 953.5625pt x 375.4025pt>
 File: images/tabelle-backend.png Graphic file (type png)
 <use images/tabelle-backend.png>
-Package pdftex.def Info: images/tabelle-backend.png  used on input line 187. on
- input line 187.
+Package pdftex.def Info: images/tabelle-backend.png  used on input line 188. on
+ input line 188.
 Package pdftex.def Info: Requested size: 375.80544pt x 147.95299pt on input lin
-e 187.
+e 188.
  [5
 
  <./images/tabelle-backend.png>]
-<images/use-case-utente.png, id=37, 923.45pt x 331.2375pt>
+<images/use-case-utente.png, id=38, 923.45pt x 331.2375pt>
 File: images/use-case-utente.png Graphic file (type png)
 <use images/use-case-utente.png>
-Package pdftex.def Info: images/use-case-utente.png  used on input line 197. on
- input line 197.
+Package pdftex.def Info: images/use-case-utente.png  used on input line 198. on
+ input line 198.
 Package pdftex.def Info: Requested size: 375.80544pt x 134.7974pt on input line
- 197.
-<images/use-case-admin.png, id=38, 742.775pt x 220.825pt>
+ 198.
+<images/use-case-admin.png, id=39, 742.775pt x 220.825pt>
 File: images/use-case-admin.png Graphic file (type png)
 <use images/use-case-admin.png>
-Package pdftex.def Info: images/use-case-admin.png  used on input line 204. on 
-input line 204.
+Package pdftex.def Info: images/use-case-admin.png  used on input line 205. on 
+input line 205.
 Package pdftex.def Info: Requested size: 375.80544pt x 111.72633pt on input lin
-e 204.
+e 205.
  [6
 
  <./images/use-case-utente.png (PNG copy)> <./images/use-case-admin.png (PNG co
 py)>]
-<images/sensor-data.png, id=43, 882.29625pt x 387.69844pt>
+<images/sensor-data.png, id=44, 882.29625pt x 387.69844pt>
 File: images/sensor-data.png Graphic file (type png)
 <use images/sensor-data.png>
-Package pdftex.def Info: images/sensor-data.png  used on input line 214. on inp
-ut line 214.
+Package pdftex.def Info: images/sensor-data.png  used on input line 215. on inp
+ut line 215.
 Package pdftex.def Info: Requested size: 375.80544pt x 165.13347pt on input lin
-e 214.
+e 215.
  [7
 
  <./images/sensor-data.png>]
-<images/subscribe-thread.png, id=47, 934.24031pt x 398.23781pt>
+<images/subscribe-thread.png, id=48, 934.24031pt x 398.23781pt>
 File: images/subscribe-thread.png Graphic file (type png)
 <use images/subscribe-thread.png>
-Package pdftex.def Info: images/subscribe-thread.png  used on input line 223. o
-n input line 223.
+Package pdftex.def Info: images/subscribe-thread.png  used on input line 224. o
+n input line 224.
 Package pdftex.def Info: Requested size: 375.80544pt x 160.19164pt on input lin
-e 223.
-<images/sensor-data-annotation.png, id=48, 934.99312pt x 404.26031pt>
+e 224.
+<images/sensor-data-annotation.png, id=49, 934.99312pt x 404.26031pt>
 File: images/sensor-data-annotation.png Graphic file (type png)
 <use images/sensor-data-annotation.png>
 Package pdftex.def Info: images/sensor-data-annotation.png  used on input line 
-230. on input line 230.
+231. on input line 231.
 Package pdftex.def Info: Requested size: 375.80544pt x 162.48465pt on input lin
-e 230.
+e 231.
  [8
 
  <./images/subscribe-thread.png> <./images/sensor-data-annotation.png>]
-<images/subscribe-result.png, id=52, 706.89093pt x 405.01312pt>
+<images/subscribe-result.png, id=53, 706.89093pt x 405.01312pt>
 File: images/subscribe-result.png Graphic file (type png)
 <use images/subscribe-result.png>
-Package pdftex.def Info: images/subscribe-result.png  used on input line 237. o
-n input line 237.
+Package pdftex.def Info: images/subscribe-result.png  used on input line 238. o
+n input line 238.
 Package pdftex.def Info: Requested size: 375.80544pt x 215.31718pt on input lin
-e 237.
-<images/rule-record.png, id=53, 746.03719pt x 393.72093pt>
+e 238.
+<images/rule-record.png, id=54, 746.03719pt x 393.72093pt>
 File: images/rule-record.png Graphic file (type png)
 <use images/rule-record.png>
-Package pdftex.def Info: images/rule-record.png  used on input line 244. on inp
-ut line 244.
+Package pdftex.def Info: images/rule-record.png  used on input line 245. on inp
+ut line 245.
 Package pdftex.def Info: Requested size: 375.80544pt x 198.33186pt on input lin
-e 244.
+e 245.
  [9
 
  <./images/subscribe-result.png> <./images/rule-record.png>]
-<images/rules.png, id=57, 914.66719pt x 398.99063pt>
+<images/rules.png, id=58, 914.66719pt x 398.99063pt>
 File: images/rules.png Graphic file (type png)
 <use images/rules.png>
-Package pdftex.def Info: images/rules.png  used on input line 252. on input lin
-e 252.
+Package pdftex.def Info: images/rules.png  used on input line 253. on input lin
+e 253.
 Package pdftex.def Info: Requested size: 375.80544pt x 163.92815pt on input lin
-e 252.
+e 253.
  [10 <./images/rules.png>]
-<images/main.png, id=61, 622.57594pt x 398.99063pt>
+<images/main.png, id=62, 622.57594pt x 398.99063pt>
 File: images/main.png Graphic file (type png)
 <use images/main.png>
-Package pdftex.def Info: images/main.png  used on input line 261. on input line
- 261.
+Package pdftex.def Info: images/main.png  used on input line 262. on input line
+ 262.
 Package pdftex.def Info: Requested size: 375.80544pt x 240.84518pt on input lin
-e 261.
+e 262.
  [11
 
  <./images/main.png>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 274.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 275.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
@@ -736,108 +824,124 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ]) [13] [14] (subscribe-rule.txt [15
 
 ] [16] [17]) [18]
-<images/subscribe-json-1.png, id=89, 368.87813pt x 392.21532pt>
+<images/subscribe-json-1.png, id=90, 368.87813pt x 392.21532pt>
 File: images/subscribe-json-1.png Graphic file (type png)
 <use images/subscribe-json-1.png>
-Package pdftex.def Info: images/subscribe-json-1.png  used on input line 295. o
-n input line 295.
+Package pdftex.def Info: images/subscribe-json-1.png  used on input line 296. o
+n input line 296.
 Package pdftex.def Info: Requested size: 187.89914pt x 199.78777pt on input lin
-e 295.
-<images/struttura-query-tree.png, id=90, 1365.1pt x 648.4225pt>
+e 296.
+<images/struttura-query-tree.png, id=91, 1365.1pt x 648.4225pt>
 File: images/struttura-query-tree.png Graphic file (type png)
 <use images/struttura-query-tree.png>
 Package pdftex.def Info: images/struttura-query-tree.png  used on input line 30
-4. on input line 304.
+5. on input line 305.
 Package pdftex.def Info: Requested size: 375.80544pt x 178.49977pt on input lin
-e 304.
+e 305.
  [19
 
  <./images/subscribe-json-1.png> <./images/struttura-query-tree.png>] (subscrib
 e-rule-nav.txt)
-<images/subscribe-json-2.png, id=94, 210.7875pt x 197.98969pt>
+<images/subscribe-json-2.png, id=95, 210.7875pt x 197.98969pt>
 File: images/subscribe-json-2.png Graphic file (type png)
 <use images/subscribe-json-2.png>
-Package pdftex.def Info: images/subscribe-json-2.png  used on input line 317. o
-n input line 317.
+Package pdftex.def Info: images/subscribe-json-2.png  used on input line 318. o
+n input line 318.
 Package pdftex.def Info: Requested size: 187.89914pt x 176.49423pt on input lin
-e 317.
+e 318.
 
 [20
 
  <./images/subscribe-json-2.png>] (subscribe-result.txt)
-Underfull \hbox (badness 10000) in paragraph at lines 334--337
+Underfull \hbox (badness 10000) in paragraph at lines 335--338
 
  []
 
 [21] [22] (exception-handler.txt)
-<images/db-rules.png, id=104, 968.86969pt x 484.05844pt>
+<images/db-rules.png, id=105, 968.86969pt x 484.05844pt>
 File: images/db-rules.png Graphic file (type png)
 <use images/db-rules.png>
-Package pdftex.def Info: images/db-rules.png  used on input line 361. on input 
-line 361.
+Package pdftex.def Info: images/db-rules.png  used on input line 362. on input 
+line 362.
 Package pdftex.def Info: Requested size: 375.80544pt x 187.75536pt on input lin
-e 361.
+e 362.
  [23
 
  <./images/db-rules.png>]
 (espressione-cron.txt) [24
 
 ] [25]
-<images/class-diagram-client.png, id=115, 739.26187pt x 1489.81593pt>
+<images/class-diagram-client.png, id=116, 739.26187pt x 1489.81593pt>
 File: images/class-diagram-client.png Graphic file (type png)
 <use images/class-diagram-client.png>
 Package pdftex.def Info: images/class-diagram-client.png  used on input line 39
-8. on input line 398.
+9. on input line 399.
 Package pdftex.def Info: Requested size: 220.78543pt x 444.94775pt on input lin
-e 398.
+e 399.
  [26
 
  <./images/class-diagram-client.png>]
 [27
 
 ]
-<images/deserialize.png, id=122, 718.93594pt x 62.48344pt>
+<images/deserialize.png, id=123, 718.93594pt x 62.48344pt>
 File: images/deserialize.png Graphic file (type png)
 <use images/deserialize.png>
-Package pdftex.def Info: images/deserialize.png  used on input line 424. on inp
-ut line 424.
+Package pdftex.def Info: images/deserialize.png  used on input line 425. on inp
+ut line 425.
 Package pdftex.def Info: Requested size: 375.80544pt x 32.66223pt on input line
- 424.
+ 425.
  [28
 
  <./images/deserialize.png>] [29] [30]
-<images/lancio-piattaforma.png, id=134, 509.65407pt x 257.46187pt>
+<images/lancio-piattaforma.png, id=135, 509.65407pt x 257.46187pt>
 File: images/lancio-piattaforma.png Graphic file (type png)
 <use images/lancio-piattaforma.png>
-Package pdftex.def Info: images/lancio-piattaforma.png  used on input line 451.
- on input line 451.
+Package pdftex.def Info: images/lancio-piattaforma.png  used on input line 452.
+ on input line 452.
 Package pdftex.def Info: Requested size: 375.80544pt x 189.85486pt on input lin
-e 451.
- (launch-parameters.txt) [31 <./images/lancio-piattaforma.png>] [32] (document.
-aux) ) 
+e 452.
+ (launch-parameters.txt) [31 <./images/lancio-piattaforma.png>]
+<images/activemq-in-esecuzione.png, id=141, 509.65407pt x 257.46187pt>
+File: images/activemq-in-esecuzione.png Graphic file (type png)
+<use images/activemq-in-esecuzione.png>
+Package pdftex.def Info: images/activemq-in-esecuzione.png  used on input line 
+468. on input line 468.
+Package pdftex.def Info: Requested size: 375.80544pt x 189.85486pt on input lin
+e 468.
+
+Overfull \hbox (113.80147pt too wide) in paragraph at lines 465--471
+\OT1/cmr/m/n/10 Per in-stal-lare il servizio di ac-tivemq e nec-es-sario scom-
+pattare la cartella che si scar-ica all'indirizzo http://activemq.apache.org/ac
+tivemq-
+ []
+
+[32 <./images/activemq-in-esecuzione.png>] (document.aux) ) 
 Here is how much of TeX's memory you used:
- 16408 strings out of 493312
- 307086 string characters out of 3138908
- 444594 words of memory out of 3000000
- 19611 multiletter control sequences out of 15000+200000
- 10903 words of font info for 39 fonts, out of 3000000 for 9000
+ 16853 strings out of 493312
+ 314062 string characters out of 3138908
+ 446994 words of memory out of 3000000
+ 20045 multiletter control sequences out of 15000+200000
+ 11238 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,8n,77p,5231b,1599s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/urw/courier/ucrr8a.pfb>
-Output written on document.pdf (33 pages, 773522 bytes).
+{C:/Program Files/Mi
+KTeX 2.9/fonts/enc/dvips/base/8r.enc} <C:\Users\PC\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courie
+r/ucrr8a.pfb>
+Output written on document.pdf (33 pages, 800633 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
+ 189 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
