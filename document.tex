@@ -107,28 +107,28 @@ Matteo Tiberi MAT. 092913
 
 \end{titlepage}
 \section{Obiettivi}
-L'obiettivo di questo progetto è la realizzazione di un sistema in grado di omogenizzare dati in ambito MES tramite l'utilizzo di servizi REST. Grazie a questi servizi, una qualsiasi applicazione client è in grado di prelevare dati relativi a macchine utensili, alle quali sono collegati dei sensori che monitorano la produzione e il loro stato di funzionamento. Ci siamo inoltre soffermati sull'integrazione di questa piattaforma con Microsoft Dynamics NAV.
+L'obiettivo di questo progetto è la realizzazione di un sistema in grado di omogeneizzare dati in ambito MES tramite l'utilizzo di servizi REST. Grazie a questi servizi, una qualsiasi applicazione è in grado di prelevare dati relativi a macchine utensili, alle quali sono collegati dei sensori. E' perciò possibile monitorare l'andamento della produzione e il loro stato di funzionamento. Ci siamo inoltre soffermati sull'integrazione di questa piattaforma con Microsoft Dynamics NAV.
 \section{Visione}
-Questo progetto è stato realizzato per poter permettere a dati presenti all'interno della Logical System s.r.l., di essere integrati con altre applicazioni client, in particolare con Microsoft Dynamics NAV, software largamente utilizzato all'interno dell'azienda.
+Questo progetto è stato realizzato per poter permettere a dati presenti all'interno della Logical System s.r.l., di essere integrati con altre applicazioni, in particolare con Microsoft Dynamics NAV, software largamente utilizzato all'interno dell'azienda.
 \section{Introduzione}
-Il progetto prevede lo sviluppo di una piattaforma Java che, tramite un'architettura REST, consente di restituire dati in formato JSON relativi alle letture di sensori collegati a macchinari utensili. La piattaforma prevede inoltre un particolare servizio di subscription con il quale è possibile ottenere i dati in base a una condizione stabilita, mediante l’utilizzo di un message broker. L’interfacciamento alla piattaforma è avvenuto tramite l’utilizzo di Microsoft Dynamics NAV.
+Il progetto prevede lo sviluppo di una piattaforma Java che, tramite un'architettura REST, consente di restituire dati in formato JSON relativi alle letture di sensori collegati a macchinari utensili. La piattaforma prevede inoltre un particolare servizio di sottoscrizione con il quale è possibile ottenere i dati in base a una condizione stabilita, mediante l’utilizzo di un message broker. L’interfacciamento alla piattaforma avviene tramite pagine web.
 \clearpage
 \section{Paradigmi, protocolli e strumenti utilizzati}
 
 \begin{itemize}
 	\item \textbf{STOMP:} Stomp è un protocollo per lo scambio di messaggi asincrono con architettura client/server.
 	Ciò che contraddistingue STOMP è la sua semplicità e interoperabilità: per il fatto che non utilizza
-	protocolli binari di codifica dei messaggi ma li invia in formato testuale, può essere anche usato in
-	linguaggi come Ruby, Perl e Python.
-	\item \textbf{ACTIVEMQ:} ActiveMQ è un broker di messaggistica (Message-Oriented Middleware) che utilizza vari protocolli di trasporto dei messaggi, tra i quali STOMP e OpenWire; permette l’implementazione di code di messaggi con metodologia publisher/subscriber chiamate topic e code chiamate queue nelle quali un messaggio viene letto dal primo client che si connette alla coda\footnote{http://activemq.apache.org/}.
-	\item \textbf{REST:} il web server della piattaforma è stato progettato utilizzando un’architettura di tipo REpresentational State Transfer (REST), per indirizzare tutte le risorse secondo una URL unica, rappresentativa ed esplicativa tramite http, e in questo modo fornire una API dinamica e generica\footnote{https://restfulapi.net/}.
-	\item \textbf{JERSEY:} è stato utilizzato il framework per servizi REST Jersey\footnote{https://stackoverflow.com/questions/7052152/why-use-jax-rs-jersey}. Jersey è conforme allo standard JAX-RS e per questo facilmente utilizzabile all'interno di un Java server come Grizzly.
+	protocolli binari ma codifica i messaggi in formato testuale, può essere anche usato in
+	linguaggi come Ruby, Perl e Python. Lo rende perciò un protocollo elastico, capace di supportare futuri sviluppi della piattaforma.
+	\item \textbf{ACTIVEMQ:} ActiveMQ è un broker di messaggistica che utilizza vari protocolli di trasporto dei messaggi, tra i quali STOMP; permette l’implementazione di code di messaggi con metodologia publisher/subscriber chiamate topic e code chiamate queue con metodologia first come first served\footnote{http://activemq.apache.org/}. Nella piattaforma viene gestito l'utilizzo di entrambe.
+	\item \textbf{REST:} il web server della piattaforma è progettato utilizzando un’architettura di tipo REpresentational State Transfer (REST), per indirizzare tutte le risorse secondo una URL unica, rappresentativa ed esplicativa tramite http, e in questo modo fornire una API dinamica\footnote{https://restfulapi.net/}.
+	\item \textbf{JERSEY:} viene utilizzato il framework per servizi REST Jersey\footnote{https://stackoverflow.com/questions/7052152/why-use-jax-rs-jersey}. Jersey è conforme allo standard JAX-RS e per questo facilmente utilizzabile all'interno di un Java server come Grizzly.
 	\item \textbf{GRIZZLY HTTP SERVER:} il framework Jersey è in esecuzione all’interno del http server Grizzly. In questo modo è possibile ottenere una soluzione indipendente ed eseguibile su qualsiasi sistema che supporti Java. La scelta di usare un http server anziché un web server è data dalla necessità primaria di scambiare dati tramite protocollo http; rimane comunque possibile pubblicare risorse come pagine web complete di Javascript e CSS.
-	\item \textbf{SQLITE:} SQLite è una libreria implementante un database engine. È open source e largamente utilizzata, in quanto strumento leggero ma allo stesso tempo particolarmente potente che consente di costruire un DB ACID completo (comprese tabelle, indici, viste ecc.) ed avere chiamate SQL funzionanti e performanti. Vista la portabilità (in quanto l’implementazione effettiva è un semplice file che rappresenta il database) e la leggerezza, è stato scelto appositamente come strumento per la base di dati per l’amministrazione della piattaforma.
-	\item \textbf{APACHE AVRO:} La struttura dei dati che i servizi REST della piattaforma restituisce, è stata definita tramite Apache Avro. Avro è un software che consente, a partire da uno schema, la generazione di classi in vari linguaggi (Java, C\#, C++, ecc...) utilizzate per la costruzione più semplice e formale di JSON. Uno dei motivi per cui è stato scelto Avro è per rendere generale il modello dei dati restituiti: indipendentemente dalle sorgenti dati connesse alla backend, il valore di ritorno di un servizio è sempre in formato Json. in questo modo se è agganciato un file, un database mysql o una websocket, una volta definito lo schema Avro, sarà possibile creare oggetti java che rappresentano i valori di queste sorgenti dati e la restituzione dei dati viene limitata ad una semplice chiamata toString.
+	\item \textbf{SQLITE:} SQLite è una libreria che implementa un database engine. È open source e largamente utilizzata, in quanto strumento leggero ma allo stesso tempo particolarmente potente che consente di costruire un DB ACID completo. Vista la portabilità (in quanto un database è rappresentato da un semplice file) e la leggerezza, è stato scelto appositamente come strumento per la base di dati per l’amministrazione della piattaforma.
+	\item \textbf{APACHE AVRO:} La struttura dei dati che i servizi REST della piattaforma restituisce, è stata definita tramite Apache Avro. Avro è un software che consente, a partire da uno schema, la generazione di classi in vari linguaggi, tra i quali Java e C\#,  utilizzate per la costruzione formale di JSON. Uno dei motivi per cui è stato scelto Avro è per rendere generale il modello dei dati restituiti: indipendentemente dalle sorgenti dati connesse alla backend, il valore di ritorno di un servizio è sempre in formato Json. in questo modo se è agganciato un file, un database mysql o una websocket, una volta definito lo schema Avro, sarà possibile creare oggetti java che rappresentano i valori di queste sorgenti dati e la restituzione dei dati viene limitata ad una semplice chiamata toString.
 	\item \textbf{MICROSOFT DYNAMICS NAV:} Ne verrà trattata una introduzione piu avanti.
-	\item \textbf{NAV WEB SERVICES:} NAV permette di integrare applicazioni esterne tramite dei servizi web SOAP, che possono ricevere dati e scriverli in tabelle. questa metodologia sarà usata per implementare il servizio di subscribe anche per NAV. l’interfaccia dei servizi è rappresentata tramite WSDL e grazie a questo è possibile auto-generare il client java, grazie a strumenti appositi.
-	\item \textbf{AUTENTICAZIONE NTLM:} è un protocollo di autenticazione di tipo challenge/response presente nei sistemi windows. questo tipo di autenticazione è la stessa usata da NAV e il server dove NAV è in esecuzione è il server in cui si deve autenticare il client che invierà il messaggio al servizio SOAP messo a disposizione da NAV.
+	\item \textbf{NAV WEB SERVICES:} NAV permette di integrare applicazioni esterne tramite dei servizi web SOAP, che possono ricevere dati e scriverli in tabelle. questa metodologia è usata per implementare il servizio di sottoscrizione per NAV. l’interfaccia dei servizi è rappresentata tramite WSDL e grazie a questo è possibile generare automaticamente il client java, grazie a strumenti appositi.
+	\item \textbf{AUTENTICAZIONE NTLM:} è un protocollo di autenticazione di tipo challenge/response presente nei sistemi windows. questo tipo di autenticazione è usata da NAV per autenticare il client che usa un web service pubblicato.
 \end{itemize}
 \clearpage
 \section{Architettura Piattaforma}
@@ -138,21 +138,21 @@ Il progetto prevede lo sviluppo di una piattaforma Java che, tramite un'architet
 	\caption*{Figura 1. Schema della LS IOT Platform}
 \end{figure}
 La parte principale della piattaforma è il web server con i servizi REST connesso al back end, che nel nostro use-case comprende un singolo database, ma che può essere composto da più sorgenti di dati eterogenee.
-Al momento sono disponibili servizi legati all’interfacciamento con il database della Logical System s.r.l. nel quale sono riportate le letture di sensori collegati 24 ore su 24 a dei macchinari e identificati tramite un codice. Nel database è stata inoltre inserita un ontologia in modo da poter descrivere e catalogare in modo formale le informazioni relative ai sensori e alle misurazioni stesse.
-In particolare attualmente i servizi disponibili consentono di:
+Al momento sono disponibili servizi legati all’interfacciamento con il database della Logical System s.r.l. nel quale sono riportate letture di sensori collegati a dei macchinari. I sensori sono identificati tramite un codice che rappresenta il loro canale di ingresso.
+I servizi attualmente disponibili consentono di:
 \begin{itemize}
-	\item Prelevare la lista dei PLC con la relativa descrizione ed ontologia se presente.
+	\item Prelevare la lista dei PLC con la relativa descrizione, se presente.
 	\item Prelevare l’ultima misura di un sensore.
 	\item Prelevare tutte le misurazioni salvate per un dato sensore (questo e i seguenti servizi hanno 2 implementazioni poiché interagiscono con 2 tabelle differenti, in quanto per gli estrusori è presente un’altra tabella a causa dei maggiori parametri da registrare): \begin{itemize}
 		\item In base ad una data.
 		\item Nell’arco di una settimana a partire dalla data inserita.
 		\item Nell’arco di un mese dalla data inserita.
-		\item Nell’arco di 2 date da inserire direttamente in input.	
+		\item Nell’arco di 2 date specificate.	
 	\end{itemize}
-	\item Prelevare le misure da una tabella a scelta a determinate condizioni (sia temporali che di selezione).
+	\item Prelevare le misure da una tabella tramite una sottoscrizione.
 \end{itemize}
-
-La struttura dell’URL dei servizi viene elencata da questa tabella:
+\clearpage
+La struttura dell’URL dei servizi viene elencata da questa tabella, dove le virgole nei parametri di input rappresentano gli slash di una URL http:
 \begin{center}
 	\begin{tabular}{ | l | p{5.06cm} | p{5.06cm} |}
 		\hline
@@ -166,11 +166,11 @@ La struttura dell’URL dei servizi viene elencata da questa tabella:
 		getDetailedMeasureLastWeek & \textit{ID} sensore, Data (\textit{Today}) & Tutte le misure dalla data \textit{Today} a una settimana prima, degli estrusori \\ \hline
 		subscribe & \{\textit{nome applicazione}, \textit{IP applicazione}, \textit{regola},\textit{coda o topic}\} & Misure del sensore caricate come messaggi sulla coda \\ \hline
 		unsubscribe & \textit{ID regola} & Annullamento del servizio di subscribe \\ \hline
-		getAllPlc & & Lista di tutti i sensori che la piattaforma offre con la relativa ontologia di misure e misurazioni \\ \hline
+		getAllPlc & & Lista di tutti i sensori che la piattaforma offre con la relativa descrizione \\ \hline
 	\end{tabular}
 \end{center}
 
-Per regolare l’accesso ai servizi da parte degli utenti, avere quindi una forma di autenticazione, ogni servizio effettua un controllo nell'header della richiesta che arriva, valutando la presenza di un token. Se il token non è rilevato, la richiesta non viene considerata e un messaggio di errore viene restituito a chi l’ha inviata. \par
+Per regolare l’accesso ai servizi da parte degli utenti, avere quindi una forma di autenticazione, ogni servizio effettua un controllo nell'header della richiesta, valutando la presenza di un token. Se il token non è rilevato, la richiesta non viene considerata e un messaggio di errore viene restituito a chi l’ha inviata. \par
 Il servizio ActiveMQ è il MOM (Message Oriented Middleware) della piattaforma che funge da tramite tra le applicazioni collegate e i thread della piattaforma per il servizio di subscribe. il collegamento ad una istanza di ActiveMQ esterna alla piattaforma è opzionale, in quanto la piattaforma contiene al suo interno anche una versione embedded del broker. 
 \par
 Esporre risorse tramite servizi REST permette alla piattaforma di essere indipendente dal tipo di client che si collegano. L’unico requisito che un client deve rispettare per poter ottenere informazioni è il supporto del protocollo http: per poter inviare richieste, collegandosi quindi all’URL che riferisce il servizio, e interpretare il valore di ritorno dell’informazione (nel nostro caso in formato JSON).
@@ -215,7 +215,7 @@ Il class diagram risulta essere troppo grande per essere comprensibile all’int
 	\includegraphics[width=0.8\textwidth]{sensor-data.png}
 	\caption*{Figura 5. SensorData e SensorDataList con interfaccia}
 \end{figure}
-\noindent In questo estratto di class diagram è descritta la classe SensorData che si ottiene compilando lo schema avro. I nomi delle proprietà della classe hanno lo stesso nome dei campi della tabella in modo da avere una relazione univoca tra proprietà dell’oggetto e valore della colonna che si ottiene da una chiamata mysql. In questo modo è possibile inserire i valori ottenuti dal database all’oggetto avro con la chiamata di un solo metodo. SensorDataList è l’oggetto Avro che rappresenta il contenitore (quindi l’array json) di questi oggetti. Si vede infatti la proprietà sensorDataListContainer che è legata da una relazione 0..* con la classe SensorData. Per come è stata implementata la piattaforma ogni oggetto Avro deve avere il rispettivo oggetto lista contenitore. L’interfaccia RetrievedDataInterface rappresenta i metodi che ogni oggetto che si vuole restituire da un servizio REST, deve implementare. I metodi sono getItem per ottenere l’oggetto effettivo, getListContainer e add per ottenere l’oggetto contenitore nel caso in cui l’oggetto effettivo è una lista e per aggiungere un nuovo oggetto alla lista; i metodi per gli oggetti contenitore sono nella stessa interfaccia perchè salendo nella gerarchia delle classi degli oggetti Java generati con Avro, non c’è distinzione tra un oggetto contenitore e un oggetto singolo, entrambi ereditano dalla stessa classe padre; semplicemente un oggetto singolo restituirà null come listContainer e non eseguirà nessuna azione per l'inserimento. il metodo fieldsHashCode è un metodo per ottenere l’hashcode dell’oggetto usando solo i valori delle proprietà, serve per definire se due oggetti sono identici a livello delle sole specifiche proprietà definite all’interno del metodo. Usando RetrievedDataInterface è possibile interagire con qualsiasi sorgente dati nella backend purchè venga definito un oggetto Avro che rappresenti i dati che contiene. 
+In figura 5 è descritta la classe SensorData che si ottiene compilando lo schema avro. I nomi delle proprietà della classe hanno lo stesso nome dei campi della tabella in modo da avere una relazione univoca tra proprietà dell’oggetto e valore della colonna che si ottiene da una chiamata mysql. In questo modo è possibile inserire i valori ottenuti dal database all’oggetto avro con la chiamata di un solo metodo. SensorDataList è l’oggetto Avro che rappresenta il contenitore (quindi l’array json) di questi oggetti. Si vede infatti la proprietà sensorDataListContainer che è legata da una relazione 0..* con la classe SensorData. Per come è stata implementata la piattaforma ogni oggetto Avro deve avere il rispettivo oggetto lista contenitore. L’interfaccia RetrievedDataInterface rappresenta i metodi che ogni oggetto che si vuole restituire da un servizio REST, deve implementare. I metodi sono getItem per ottenere l’oggetto effettivo, getListContainer e add per ottenere l’oggetto contenitore nel caso in cui l’oggetto effettivo è una lista e per aggiungere un nuovo oggetto alla lista; i metodi per gli oggetti contenitore sono nella stessa interfaccia perchè salendo nella gerarchia delle classi degli oggetti Java generati con Avro, non c’è distinzione tra un oggetto contenitore e un oggetto singolo, entrambi ereditano dalla stessa classe padre; semplicemente un oggetto singolo restituirà null come listContainer e non eseguirà nessuna azione per l'inserimento. il metodo fieldsHashCode è un metodo per ottenere l’hashcode dell’oggetto usando solo i valori delle proprietà, serve per definire se due oggetti sono identici a livello delle sole specifiche proprietà definite all’interno del metodo. Usando RetrievedDataInterface è possibile interagire con qualsiasi sorgente dati nella backend purchè venga definito un oggetto Avro che rappresenti i dati che contiene. 
 \par
 Avere una rappresentazione dei dati come schema Avro permette di raggruppare tutti i possibili dati che una piattaforma può restituire come oggetti RetrievedDataInterface. In questo modo la piattaforma può evolvere e gestire diversi schemi Avro di differenti oggetti.
 \clearpage
@@ -283,7 +283,7 @@ L’annotazione cambia il comportamento dei servizi della piattaforma, infatti s
 \par
 Gli schemi Avro per le altre tabelle SensorHystoricalData e SensorHystoricalDataExt sono fatte allo stesso modo di SensorData.
 \clearpage
-\subsection{Struttura della regola}
+\subsection{Struttura della regola di sottoscrizione}
 Lo schema Json che rappresenta una regola per il servizio di Subscribe è il seguente. 
 {\fontfamily{pcr}\selectfont
 	\lstinputlisting[breaklines]{subscribe-rule.txt}
@@ -442,19 +442,19 @@ Per l’interazione con le tabelle sono state utilizzate variabili di tipo recor
 
 L’approccio legato ai PLC è stato fatto per rendere il PLC stesso uno “smart object” del quale sono presentate descrizioni letterali e formali tramite un ontologia. Il punto di partenza è la pagina PLC List nella quale viene visualizzata una lista di tutti i PLC sempre aggiornata. L’aggiornamento è fatto in automatico all’apertura della pagina tramite chiamata al metodo relativo della codeunit nel trigger OnOpen e può essere fatta su richiesta tramite l’apposita page action Update. Successivamente è possibile selezionare i PLC di cui si vogliono ricevere le misurazioni e con la page action InsertPLC verranno inseriti nella tabella PLCSelected. Successivamente si seleziona il PLC (collegato proprio alla tabella PLCSelected) e il parametro (collegato alla tabella Machine Parameters) e si può procedere alla cattura delle misurazioni con quelle specifiche. Nel secondo approccio il PLC va inserito nella tabella Machine Center presente nel DB standard Logical System e da lì si seleziona la macchina al posto del PLC (il valore del PLC viene comunque catturato tramite collegamento al record), mentre tutto il resto è selezionato allo stesso modo del caso precedente. Anche i metodi nella codeunit che inviano la richiesta al servizio REST sono molto simili per entrambi gli approcci, in entrambi è presente un metodo principale con il quale si filtra e si scorre il record delle tabelle in modo da prendere tutti i valori memorizzati (ovvero tutte le richieste di parametri). Il metodo vero e proprio dell’inserimento viene chiamato per ogni codice macchina / PLC: si prendono tutti i valori da richiedere (i codici assegnati in base ai parametri), la eventuale richiesta di annotazioni nelle possibili chiamate e si differenziano in più variabili (una per ognuna delle 3 possibili chiamate, in modo da non confondere i valori da richiedere), successivamente poi si controlla se per un macchinario / PLC siano presenti parametri da inviare per ogni chiamata (in modo tale che, se non vi siano presenti parametri per una determinata tabella si evita a prescindere di tentare una call del servizio REST). Per ogni risultato inviato dalla piattaforma in formato JSON si controlla se sono presenti errori e se sia vuoto (empty set) e in tal caso si evita l’avanzamento con quel JSON, altrimenti si procede alla deserializzazione e a ciclare la lista dei risultati in relazione al record filtrato in base al codice macchina / PLC e controllando che i record risultanti siano relativi alla chiamata del metodo. Prima dell’inserimento delle misurazioni inoltre si fa un controllo per verificare se il dato è nuovo (ovvero che la data delle misurazioni, nel caso siano presenti, sia inferiore a quelle da inserire) e in tal caso si procede all’inserimento. Quando si selezionano dei valori da ricevere, nel JSON mi vengono riportati comunque tutti i campi ma con i parametri non selezionati che hanno valore assegnato null. In questo caso è necessario evitare un grosso problema: il tipo null non esiste all’interno dell’ambiente Navision e alla visione di questo determinato tipo il client si chiude automaticamente senza dare alcun messaggio o alcun errore. Proprio a questo fine nelle classi generate da Avro dei vari oggetti è stato inserito un metodo GetByNumber che, per ogni numero ricevuto in input, restituisce un valore. In questo modo gli stessi valori che sono settati automaticamente nel record della tabella in base al parametro possono essere utilizzati anche per prendere il relativo dato richiesto senza il rischio di incappare in un dato null. Nel caso in cui vengano richieste le annotazioni viene impostato un oggetto SensorDataAnnotation che possiede 2 attributi (o solo null nel caso non ci sia un annotazione o venga richiesto di non mostrarle). Anche in questo caso in entrambi i metodi è stato messo un controllo con il quale si ignora completamente l’annotazione se essa non è stata selezionata, altrimenti si cerca di convertire il valore tramite utilizzo di System.convert importato dalla versione 4.0 della Microsoft Common Object Runtime Library (mscorlib.dll) nel caso non sia stringa vuota, in quanto nel metodo getByNumber delle classi avro per le annotazioni si riporta stringa vuota nel caso vengano richieste, ma il loro valore sia comunque null in quanto non presenti nel DB. L’utilizzo di System.Convert è dovuto in quanto nell’ambiente Navision non è possibile effettuare un casting esplicito delle variabili (mentre i casting impliciti verso tipi primitivi del C/AL code vengono fatti in maniera corretta anche a partire dal tipo Object), specialmente per i tipi DotNet. Oltre a questo caso è stato necessario utilizzare un altro metodo dalla mscorlib, ossia il parser di System.DateTime. Nel nostro caso infatti, il formato DateTime non è disponibile tra i tipi previsti per gli schemi di Avro e si è stati costretti a impostare il timestamp delle tabelle come stringa da poter poi convertire successivamente. Inoltre, nonostante il casting implicito tra il DateTime di DotNet e quello del C/AL funzioni senza difficoltà, non vi erano metodi in grado di poter convertire una stringa ad un dateTime. Di seguito sono riportati, in figura 18 e 19, due screen della richiesta dati dall'approccio del PLC.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{PLC-Assigment-List.png}
 	\caption*{Figura 18. La pagina PLC Parameter Assignment, dalla quale si impostano i valori da richiedere}
 \end{figure}
-\newpage
+\clearpage
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{PLC-Reading-List.png}
 	\caption*{Figura 19. La pagina PLC Parameter Reading, dalla quale si visualizzano i valori richiesti}
 \end{figure}
 Per poter effettuare il servizio di sottoscrizione in NAV è stata generata la pagina SubscriptionPage, nella quale è presente la possibilità di scrivere le condizioni sulle quali si vogliono i dati (la clausola con cui si faranno chiamate in SQL), e si lancia una page action collegata alla codeunit con la quale si effettua il metodo di sottoscrizione in base alle informazioni riportate in input. Una volta ricevuta la risposta, in caso di esito affermativo, si prende il numero della sottoscrizione e si setta in tabella, impostando inoltre lo stato come attivo. Per cancellare una sottoscrizione è possibile dunque utilizzare la page action unsubscribe che partendo dal dato messo in tabella come ID Sottoscrizione lo invia alla piattaforma che procederà dunque a cancellare la sottoscrizione relativa. 
-
+\clearpage
 \section{Manualistica}
 \subsection{Installazione e avvio della piattaforma}
 La piattaforma si presenta come un jar eseguibile. è necessario fornire parametri di input. Un esempio per lanciare la piattaforma in locale è rappresentato in figura 18
@@ -474,11 +474,11 @@ i tre parametri che contengono la parola platform indicano rispettivamente in or
 username e password sono le credenziali con le quali avviene il collegamento al database con i dati. sono opzionali. infine broker indica l'indirizzo ip al quale il servizio activemq è in esecuzione. se il parametro non è presente viene lanciato il broker embedded della piattaforma.
 \subsection{Installazione servizio ActiveMQ esterno}
 Per installare il servizio di activemq è necessario scompattare la cartella che si scarica all'indirizzo http://activemq.apache.org/activemq-5153-release.html. Fatto questo, deve essere lanciato il servizio di activemq da terminale tramite il comando "\\posizione del file\\activemq start".
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=0.8\textwidth]{activemq-in-esecuzione.png}
-%	\caption*{Figura 21. Istanza di activemq in esecuzione}
-%\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{activemq-in-esecuzione.png}
+	\caption*{Figura 21. Istanza di activemq in esecuzione}
+\end{figure}
 \newpage
 \section{Possibili sviluppi futuri}
 Come possibili sviluppi futuri sono attualmente previsti la costruzione di un ontologia di dominio Logical System per la piattaforma LSIoT Platform tramite l'utilizzo di Protegè e SKOS (Simple Knowledge Organization System) e l'integrazione della piattaforma con il mondo del big data streaming tramite l'utilizzo di di Apache Flink.
