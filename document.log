@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.27)  4 MAR 2018 01:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.27)  4 MAR 2018 23:23
 entering extended mode
 **./document.tex
 (document.tex
@@ -699,7 +699,7 @@ File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 ) [1] [2
 
 ]
-<images/architettura-piattaforma.png, id=25, 588.1975pt x 444.66125pt>
+<images/architettura-piattaforma.png, id=26, 588.1975pt x 444.66125pt>
 File: images/architettura-piattaforma.png Graphic file (type png)
 <use images/architettura-piattaforma.png>
 Package pdftex.def Info: images/architettura-piattaforma.png  used on input lin
@@ -723,33 +723,31 @@ Underfull \hbox (badness 2173) in paragraph at lines 167--167
 cmr/m/it/10 IP ap-pli-
  []
 
-[4
-
-]
+[4]
 <images/tabelle-backend.png, id=34, 953.5625pt x 375.4025pt>
 File: images/tabelle-backend.png Graphic file (type png)
 <use images/tabelle-backend.png>
-Package pdftex.def Info: images/tabelle-backend.png  used on input line 188. on
- input line 188.
+Package pdftex.def Info: images/tabelle-backend.png  used on input line 178. on
+ input line 178.
 Package pdftex.def Info: Requested size: 375.80544pt x 147.95299pt on input lin
-e 188.
+e 178.
  [5
 
  <./images/tabelle-backend.png>]
 <images/use-case-utente.png, id=38, 923.45pt x 331.2375pt>
 File: images/use-case-utente.png Graphic file (type png)
 <use images/use-case-utente.png>
-Package pdftex.def Info: images/use-case-utente.png  used on input line 198. on
- input line 198.
+Package pdftex.def Info: images/use-case-utente.png  used on input line 193. on
+ input line 193.
 Package pdftex.def Info: Requested size: 375.80544pt x 134.7974pt on input line
- 198.
+ 193.
 <images/use-case-admin.png, id=39, 742.775pt x 220.825pt>
 File: images/use-case-admin.png Graphic file (type png)
 <use images/use-case-admin.png>
-Package pdftex.def Info: images/use-case-admin.png  used on input line 205. on 
-input line 205.
+Package pdftex.def Info: images/use-case-admin.png  used on input line 200. on 
+input line 200.
 Package pdftex.def Info: Requested size: 375.80544pt x 111.72633pt on input lin
-e 205.
+e 200.
  [6
 
  <./images/use-case-utente.png (PNG copy)> <./images/use-case-admin.png (PNG co
@@ -757,27 +755,27 @@ py)>]
 <images/sensor-data.png, id=44, 882.29625pt x 387.69844pt>
 File: images/sensor-data.png Graphic file (type png)
 <use images/sensor-data.png>
-Package pdftex.def Info: images/sensor-data.png  used on input line 215. on inp
-ut line 215.
+Package pdftex.def Info: images/sensor-data.png  used on input line 210. on inp
+ut line 210.
 Package pdftex.def Info: Requested size: 375.80544pt x 165.13347pt on input lin
-e 215.
+e 210.
  [7
 
  <./images/sensor-data.png>]
 <images/subscribe-thread.png, id=48, 934.24031pt x 398.23781pt>
 File: images/subscribe-thread.png Graphic file (type png)
 <use images/subscribe-thread.png>
-Package pdftex.def Info: images/subscribe-thread.png  used on input line 224. o
-n input line 224.
+Package pdftex.def Info: images/subscribe-thread.png  used on input line 217. o
+n input line 217.
 Package pdftex.def Info: Requested size: 375.80544pt x 160.19164pt on input lin
-e 224.
+e 217.
 <images/sensor-data-annotation.png, id=49, 934.99312pt x 404.26031pt>
 File: images/sensor-data-annotation.png Graphic file (type png)
 <use images/sensor-data-annotation.png>
 Package pdftex.def Info: images/sensor-data-annotation.png  used on input line 
-231. on input line 231.
+225. on input line 225.
 Package pdftex.def Info: Requested size: 375.80544pt x 162.48465pt on input lin
-e 231.
+e 225.
 
 [8
 
@@ -785,17 +783,17 @@ e 231.
 <images/subscribe-result.png, id=53, 706.89093pt x 405.01312pt>
 File: images/subscribe-result.png Graphic file (type png)
 <use images/subscribe-result.png>
-Package pdftex.def Info: images/subscribe-result.png  used on input line 238. o
-n input line 238.
+Package pdftex.def Info: images/subscribe-result.png  used on input line 232. o
+n input line 232.
 Package pdftex.def Info: Requested size: 375.80544pt x 215.31718pt on input lin
-e 238.
+e 232.
 <images/rule-record.png, id=54, 746.03719pt x 393.72093pt>
 File: images/rule-record.png Graphic file (type png)
 <use images/rule-record.png>
-Package pdftex.def Info: images/rule-record.png  used on input line 245. on inp
-ut line 245.
+Package pdftex.def Info: images/rule-record.png  used on input line 239. on inp
+ut line 239.
 Package pdftex.def Info: Requested size: 375.80544pt x 198.33186pt on input lin
-e 245.
+e 239.
 
 [9
 
@@ -803,22 +801,22 @@ e 245.
 <images/rules.png, id=58, 914.66719pt x 398.99063pt>
 File: images/rules.png Graphic file (type png)
 <use images/rules.png>
-Package pdftex.def Info: images/rules.png  used on input line 253. on input lin
-e 253.
+Package pdftex.def Info: images/rules.png  used on input line 247. on input lin
+e 247.
 Package pdftex.def Info: Requested size: 375.80544pt x 163.92815pt on input lin
-e 253.
+e 247.
  [10 <./images/rules.png>]
-<images/main.png, id=62, 622.57594pt x 398.99063pt>
+<images/main.png, id=62, 597.73312pt x 400.49625pt>
 File: images/main.png Graphic file (type png)
 <use images/main.png>
-Package pdftex.def Info: images/main.png  used on input line 262. on input line
- 262.
-Package pdftex.def Info: Requested size: 375.80544pt x 240.84518pt on input lin
-e 262.
+Package pdftex.def Info: images/main.png  used on input line 256. on input line
+ 256.
+Package pdftex.def Info: Requested size: 375.80544pt x 251.80064pt on input lin
+e 256.
  [11
 
  <./images/main.png>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 275.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 269.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
@@ -826,147 +824,166 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) (sensor-data.txt
 [12
 
-]) [13] [14] (subscribe-rule.txt [15
+]) [13] (subscribe-rule.txt [14] [15] [16])
+Overfull \hbox (14.5213pt too wide) in paragraph at lines 285--286
+[]\OT1/cmr/m/n/10 Nel mes-sag-gio JSON che il servizio di sub-scribe riceve vie
+ne spec-i-fi-cato, il nome e l'indirizzo IP dell'applicativo
+ []
 
-] [16] [17]) [18]
-<images/subscribe-json-1.png, id=90, 368.87813pt x 392.21532pt>
-File: images/subscribe-json-1.png Graphic file (type png)
-<use images/subscribe-json-1.png>
-Package pdftex.def Info: images/subscribe-json-1.png  used on input line 296. o
-n input line 296.
-Package pdftex.def Info: Requested size: 187.89914pt x 199.78777pt on input lin
-e 296.
-<images/struttura-query-tree.png, id=91, 1365.1pt x 648.4225pt>
+[17]
+<images/struttura-query-tree.png, id=86, 1365.1pt x 648.4225pt>
 File: images/struttura-query-tree.png Graphic file (type png)
 <use images/struttura-query-tree.png>
 Package pdftex.def Info: images/struttura-query-tree.png  used on input line 30
-5. on input line 305.
+2. on input line 302.
 Package pdftex.def Info: Requested size: 375.80544pt x 178.49977pt on input lin
-e 305.
- [19
+e 302.
+ [18
 
- <./images/subscribe-json-1.png> <./images/struttura-query-tree.png>] (subscrib
-e-rule-nav.txt)
-<images/subscribe-json-2.png, id=95, 210.7875pt x 197.98969pt>
+ <./images/struttura-query-tree.png>]
+<images/subscribe-json-1.png, id=91, 368.87813pt x 392.21532pt>
+File: images/subscribe-json-1.png Graphic file (type png)
+<use images/subscribe-json-1.png>
+Package pdftex.def Info: images/subscribe-json-1.png  used on input line 309. o
+n input line 309.
+Package pdftex.def Info: Requested size: 187.89914pt x 199.78777pt on input lin
+e 309.
+ (subscribe-rule-nav.txt)
+<images/subscribe-json-2.png, id=92, 210.7875pt x 197.98969pt>
 File: images/subscribe-json-2.png Graphic file (type png)
 <use images/subscribe-json-2.png>
-Package pdftex.def Info: images/subscribe-json-2.png  used on input line 318. o
-n input line 318.
+Package pdftex.def Info: images/subscribe-json-2.png  used on input line 324. o
+n input line 324.
 Package pdftex.def Info: Requested size: 187.89914pt x 176.49423pt on input lin
-e 318.
+e 324.
+ [19
 
-[20
-
- <./images/subscribe-json-2.png>] (subscribe-result.txt)
-Underfull \hbox (badness 10000) in paragraph at lines 335--338
-
- []
-
-[21] [22] (exception-handler.txt)
-<images/db-rules.png, id=105, 968.86969pt x 484.05844pt>
+ <./images/subscribe-json-1.png>] (subscribe-result.txt) [20 <./images/subscrib
+e-json-2.png>] [21] (exception-handler.txt)
+<images/db-rules.png, id=102, 968.86969pt x 484.05844pt>
 File: images/db-rules.png Graphic file (type png)
 <use images/db-rules.png>
-Package pdftex.def Info: images/db-rules.png  used on input line 362. on input 
-line 362.
+Package pdftex.def Info: images/db-rules.png  used on input line 367. on input 
+line 367.
 Package pdftex.def Info: Requested size: 375.80544pt x 187.75536pt on input lin
-e 362.
- [23
+e 367.
+ [22
 
  <./images/db-rules.png>]
-(espressione-cron.txt) [24
+(espressione-cron.txt) [23
 
-] [25]
-<images/class-diagram-client.png, id=116, 739.26187pt x 1489.81593pt>
+] [24]
+<images/class-diagram-client.png, id=113, 739.26187pt x 1489.81593pt>
 File: images/class-diagram-client.png Graphic file (type png)
 <use images/class-diagram-client.png>
-Package pdftex.def Info: images/class-diagram-client.png  used on input line 39
-9. on input line 399.
+Package pdftex.def Info: images/class-diagram-client.png  used on input line 40
+4. on input line 404.
 Package pdftex.def Info: Requested size: 220.78543pt x 444.94775pt on input lin
-e 399.
- [26
+e 404.
+ [25
 
  <./images/class-diagram-client.png>]
-[27
+[26
 
 ]
-<images/deserialize.png, id=123, 718.93594pt x 62.48344pt>
+<images/deserialize.png, id=120, 718.93594pt x 62.48344pt>
 File: images/deserialize.png Graphic file (type png)
 <use images/deserialize.png>
-Package pdftex.def Info: images/deserialize.png  used on input line 425. on inp
-ut line 425.
+Package pdftex.def Info: images/deserialize.png  used on input line 430. on inp
+ut line 430.
 Package pdftex.def Info: Requested size: 375.80544pt x 32.66223pt on input line
- 425.
- [28
+ 430.
+ [27
 
- <./images/deserialize.png>] [29]
-<images/PLC-Assigment-List.png, id=131, 1028.34187pt x 547.2947pt>
+ <./images/deserialize.png>] [28]
+<images/PLC-Assigment-List.png, id=128, 1028.34187pt x 547.2947pt>
 File: images/PLC-Assigment-List.png Graphic file (type png)
 <use images/PLC-Assigment-List.png>
-Package pdftex.def Info: images/PLC-Assigment-List.png  used on input line 447.
- on input line 447.
+Package pdftex.def Info: images/PLC-Assigment-List.png  used on input line 452.
+ on input line 452.
 Package pdftex.def Info: Requested size: 375.80544pt x 200.00725pt on input lin
-e 447.
- [30] [31 <./images/PLC-Assigment-List.png>]
-<images/PLC-Reading-List.png, id=139, 1028.34187pt x 547.2947pt>
+e 452.
+ [29] [30 <./images/PLC-Assigment-List.png>]
+<images/PLC-Reading-List.png, id=136, 1028.34187pt x 547.2947pt>
 File: images/PLC-Reading-List.png Graphic file (type png)
 <use images/PLC-Reading-List.png>
-Package pdftex.def Info: images/PLC-Reading-List.png  used on input line 453. o
-n input line 453.
+Package pdftex.def Info: images/PLC-Reading-List.png  used on input line 458. o
+n input line 458.
 Package pdftex.def Info: Requested size: 375.80544pt x 200.00725pt on input lin
-e 453.
- [32
+e 458.
+ [31
 
  <./images/PLC-Reading-List.png>]
-<images/lancio-piattaforma.png, id=143, 509.65407pt x 257.46187pt>
+<images/lancio-piattaforma.png, id=140, 509.65407pt x 257.46187pt>
 File: images/lancio-piattaforma.png Graphic file (type png)
 <use images/lancio-piattaforma.png>
-Package pdftex.def Info: images/lancio-piattaforma.png  used on input line 463.
- on input line 463.
+Package pdftex.def Info: images/lancio-piattaforma.png  used on input line 468.
+ on input line 468.
 Package pdftex.def Info: Requested size: 375.80544pt x 189.85486pt on input lin
-e 463.
+e 468.
  (launch-parameters.txt)
-<images/activemq-in-esecuzione.png, id=145, 509.65407pt x 257.46187pt>
+<images/activemq-in-esecuzione.png, id=142, 509.65407pt x 257.46187pt>
 File: images/activemq-in-esecuzione.png Graphic file (type png)
 <use images/activemq-in-esecuzione.png>
 Package pdftex.def Info: images/activemq-in-esecuzione.png  used on input line 
-479. on input line 479.
+484. on input line 484.
 Package pdftex.def Info: Requested size: 375.80544pt x 189.85486pt on input lin
-e 479.
+e 484.
 
-Overfull \hbox (113.80147pt too wide) in paragraph at lines 476--482
-\OT1/cmr/m/n/10 Per in-stal-lare il servizio di ac-tivemq e nec-es-sario scom-
-pattare la cartella che si scar-ica all'indirizzo http://activemq.apache.org/ac
-tivemq-
+Overfull \hbox (93.85695pt too wide) in paragraph at lines 481--487
+\OT1/cmr/m/n/10 Per in-stal-lare il servizio di ac-tivemq e nec-es-sario es-tr
+arre la cartella che si scar-ica all'indirizzo http://activemq.apache.org/activ
+emq-
  []
 
-[33
+[32
 
- <./images/lancio-piattaforma.png>] [34 <./images/activemq-in-esecuzione.png>] 
-[35] (document.aux) ) 
+ <./images/lancio-piattaforma.png>]
+<images/pagina-di-richiesta.png, id=147, 987.69pt x 578.16pt>
+File: images/pagina-di-richiesta.png Graphic file (type png)
+<use images/pagina-di-richiesta.png>
+Package pdftex.def Info: images/pagina-di-richiesta.png  used on input line 491
+. on input line 491.
+Package pdftex.def Info: Requested size: 375.80544pt x 219.97656pt on input lin
+e 491.
+<images/gestione-delle-richieste.png, id=148, 987.69pt x 578.16pt>
+File: images/gestione-delle-richieste.png Graphic file (type png)
+<use images/gestione-delle-richieste.png>
+Package pdftex.def Info: images/gestione-delle-richieste.png  used on input lin
+e 496. on input line 496.
+Package pdftex.def Info: Requested size: 375.80544pt x 219.97656pt on input lin
+e 496.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[33 <./images/activemq-in-esecuzione.png> <./images/pagina-di-richiesta.png>]
+[34 <./images/gestione-delle-richieste.png>] (document.aux) ) 
 Here is how much of TeX's memory you used:
- 16863 strings out of 493312
- 314366 string characters out of 3138908
- 446993 words of memory out of 3000000
- 20053 multiletter control sequences out of 15000+200000
+ 16874 strings out of 493312
+ 314725 string characters out of 3138908
+ 433994 words of memory out of 3000000
+ 20062 multiletter control sequences out of 15000+200000
  11238 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,8n,77p,5333b,1599s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc} 
-<C:\Users\PC\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm10
-00.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on document.pdf (36 pages, 862923 bytes).
+ 62i,8n,77p,5333b,1603s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/
+MiKTeX 2.9/fonts/enc/dvips/base/8r.enc} <C:\Users\PC\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/cour
+ier/ucrr8a.pfb>
+Output written on document.pdf (35 pages, 949558 bytes).
 PDF statistics:
  200 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

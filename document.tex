@@ -46,8 +46,8 @@
 %Path in Windows format:
 \graphicspath{ {images/} }
 \usepackage[colorinlistoftodos]{todonotes}
-\setlength{\parskip}{1em}
-\setlength{\parindent}{0pt}
+%\setlength{\parskip}{1em}
+%\setlength{\parindent}{0pt}
 \begin{document}
 
 \begin{titlepage}
@@ -111,24 +111,24 @@ L'obiettivo di questo progetto è la realizzazione di un sistema in grado di omo
 \section{Visione}
 Questo progetto è stato realizzato per poter permettere a dati presenti all'interno della Logical System s.r.l., di essere integrati con altre applicazioni, in particolare con Microsoft Dynamics NAV, software largamente utilizzato all'interno dell'azienda.
 \section{Introduzione}
-Il progetto prevede lo sviluppo di una piattaforma Java che, tramite un'architettura REST, consente di restituire dati in formato JSON relativi alle letture di sensori collegati a macchinari utensili. La piattaforma prevede inoltre un particolare servizio di sottoscrizione con il quale è possibile ottenere i dati in base a una condizione stabilita, mediante l’utilizzo di un message broker. L’interfacciamento alla piattaforma avviene tramite pagine web.
+Il progetto prevede lo sviluppo di una piattaforma Java che, tramite un'architettura REST, consente di restituire dati in formato JSON relativi alle letture di sensori collegati a macchinari utensili. La piattaforma prevede inoltre un particolare servizio di sottoscrizione con il quale è possibile ottenere i dati in base a una condizione stabilita, mediante l’utilizzo di un message broker. La piattaforma ha una interfaccia grafica composta da pagine web.
 \clearpage
 \section{Paradigmi, protocolli e strumenti utilizzati}
 
 \begin{itemize}
-	\item \textbf{STOMP:} Stomp è un protocollo per lo scambio di messaggi asincrono con architettura client/server.
+	\item \textbf{STOMP:} Stomp è un protocollo per lo scambio di messaggi asincrono con architettura client/server.\footnote{https://stomp.github.io/stomp-specification-1.2.html}
 	Ciò che contraddistingue STOMP è la sua semplicità e interoperabilità: per il fatto che non utilizza
 	protocolli binari ma codifica i messaggi in formato testuale, può essere anche usato in
 	linguaggi come Ruby, Perl e Python. Lo rende perciò un protocollo elastico, capace di supportare futuri sviluppi della piattaforma.
-	\item \textbf{ACTIVEMQ:} ActiveMQ è un broker di messaggistica che utilizza vari protocolli di trasporto dei messaggi, tra i quali STOMP; permette l’implementazione di code di messaggi con metodologia publisher/subscriber chiamate topic e code chiamate queue con metodologia first come first served\footnote{http://activemq.apache.org/}. Nella piattaforma viene gestito l'utilizzo di entrambe.
+	\item \textbf{ACTIVEMQ:} ActiveMQ\footnote{http://activemq.apache.org/} è un broker di messaggistica che utilizza vari protocolli di trasporto dei messaggi, tra i quali STOMP; permette l’implementazione di \textit{topic} (con metodologia  publisher/subscriber per i messaggi) e \textit{queue} dove il primo consumer che si connette è in grado di leggere i messaggi. Nella piattaforma viene gestito l'utilizzo di entrambe.
 	\item \textbf{REST:} il web server della piattaforma è progettato utilizzando un’architettura di tipo REpresentational State Transfer (REST), per indirizzare tutte le risorse secondo una URL unica, rappresentativa ed esplicativa tramite http, e in questo modo fornire una API dinamica\footnote{https://restfulapi.net/}.
 	\item \textbf{JERSEY:} viene utilizzato il framework per servizi REST Jersey\footnote{https://stackoverflow.com/questions/7052152/why-use-jax-rs-jersey}. Jersey è conforme allo standard JAX-RS e per questo facilmente utilizzabile all'interno di un Java server come Grizzly.
-	\item \textbf{GRIZZLY HTTP SERVER:} il framework Jersey è in esecuzione all’interno del http server Grizzly. In questo modo è possibile ottenere una soluzione indipendente ed eseguibile su qualsiasi sistema che supporti Java. La scelta di usare un http server anziché un web server è data dalla necessità primaria di scambiare dati tramite protocollo http; rimane comunque possibile pubblicare risorse come pagine web complete di Javascript e CSS.
-	\item \textbf{SQLITE:} SQLite è una libreria che implementa un database engine. È open source e largamente utilizzata, in quanto strumento leggero ma allo stesso tempo particolarmente potente che consente di costruire un DB ACID completo. Vista la portabilità (in quanto un database è rappresentato da un semplice file) e la leggerezza, è stato scelto appositamente come strumento per la base di dati per l’amministrazione della piattaforma.
-	\item \textbf{APACHE AVRO:} La struttura dei dati che i servizi REST della piattaforma restituisce, è stata definita tramite Apache Avro. Avro è un software che consente, a partire da uno schema, la generazione di classi in vari linguaggi, tra i quali Java e C\#,  utilizzate per la costruzione formale di JSON. Uno dei motivi per cui è stato scelto Avro è per rendere generale il modello dei dati restituiti: indipendentemente dalle sorgenti dati connesse alla backend, il valore di ritorno di un servizio è sempre in formato Json. in questo modo se è agganciato un file, un database mysql o una websocket, una volta definito lo schema Avro, sarà possibile creare oggetti java che rappresentano i valori di queste sorgenti dati e la restituzione dei dati viene limitata ad una semplice chiamata toString.
-	\item \textbf{MICROSOFT DYNAMICS NAV:} Ne verrà trattata una introduzione piu avanti.
-	\item \textbf{NAV WEB SERVICES:} NAV permette di integrare applicazioni esterne tramite dei servizi web SOAP, che possono ricevere dati e scriverli in tabelle. questa metodologia è usata per implementare il servizio di sottoscrizione per NAV. l’interfaccia dei servizi è rappresentata tramite WSDL e grazie a questo è possibile generare automaticamente il client java, grazie a strumenti appositi.
-	\item \textbf{AUTENTICAZIONE NTLM:} è un protocollo di autenticazione di tipo challenge/response presente nei sistemi windows. questo tipo di autenticazione è usata da NAV per autenticare il client che usa un web service pubblicato.
+	\item \textbf{GRIZZLY HTTP SERVER:} Jersey viene eseguito all’interno del http server Grizzly. In questo modo è possibile eseguire la piattaforma su qualsiasi sistema che supporti Java. Inoltre Grizzly permette nativamente di creare un server scalabile, che offre la possibilità di pubblicare pagine web complete la Java NIO API\footnote{https://javaee.github.io/grizzly/}.
+	\item \textbf{SQLITE:} SQLite è una libreria che implementa un database engine. È open source e largamente utilizzata, in quanto strumento leggero ma allo stesso tempo particolarmente potente che consente di costruire un DB ACID completo. Vista la portabilità (in quanto un database è rappresentato da un semplice file) e la leggerezza, è stato scelto appositamente come strumento per l’amministrazione della piattaforma.
+	\item \textbf{APACHE AVRO:} La struttura dei dati che i servizi REST della piattaforma restituisce è stata definita tramite Apache Avro. Avro è un software che consente, a partire da uno schema, la generazione di classi in vari linguaggi, tra i quali Java e C\#,  utilizzate per la costruzione di JSON. Uno dei motivi per cui è stato scelto Avro è per rendere generale l'interfaccia tra piattaforma e backend: indipendentemente dalla sorgente dati, il valore di ritorno di un servizio è sempre un messaggio JSON che si ottiene da una semplice chiamata al metodo toString dell'oggetto Avro che rappresenta quel dato.
+	\item \textbf{MICROSOFT DYNAMICS NAV:} Microsoft Dynamics NAV è un ERP. Consente alle imprese una completa gestione della contabilità e del magazzino tramite tabelle e pagine, dispone di un sistema centralizzato di autorizzazioni in modo che solo determinati utenti possano accedere a determinate aree di lavoro.
+	\item \textbf{NAV WEB SERVICES:} NAV permette di integrare applicazioni esterne tramite dei servizi web SOAP, che possono ricevere dati e scriverli in tabelle. Questa metodologia è usata per implementare il servizio di sottoscrizione per NAV. L’interfaccia dei servizi è rappresentata tramite WSDL e grazie a questo è possibile generare automaticamente il client Java, grazie a strumenti appositi.
+	\item \textbf{AUTENTICAZIONE NTLM:} è un protocollo di autenticazione di tipo challenge/response presente nei sistemi Windows. Questo tipo di autenticazione è usata da NAV per autenticare il client che usa un web service pubblicato.
 \end{itemize}
 \clearpage
 \section{Architettura Piattaforma}
@@ -137,8 +137,8 @@ Il progetto prevede lo sviluppo di una piattaforma Java che, tramite un'architet
 	\includegraphics[width=0.8\textwidth]{architettura-piattaforma.png}
 	\caption*{Figura 1. Schema della LS IOT Platform}
 \end{figure}
-La parte principale della piattaforma è il web server con i servizi REST connesso al back end, che nel nostro use-case comprende un singolo database, ma che può essere composto da più sorgenti di dati eterogenee.
-Al momento sono disponibili servizi legati all’interfacciamento con il database della Logical System s.r.l. nel quale sono riportate letture di sensori collegati a dei macchinari. I sensori sono identificati tramite un codice che rappresenta il loro canale di ingresso.
+La parte principale della piattaforma è il web server con i servizi REST. I servizi della piattaforma interagiscono con diverse applicazioni che inviano richieste HTTP per ottenere dati. Le applicazioni sono autenticate dalla piattaforma tramite un \textit{token} di abilitazione. Ciò che la piattaforma restituisce è rappresentato dalle sorgenti dati nel back end; nel nostro \textit{use-case} comprende un singolo database, ma può essere composto da più sorgenti eterogenee. Si aggiunge poi il servizio di "subscribe" che notifica le applicazioni sottoscritte tramite ActiveMQ (che può essere lanciato sia interno alla piattaforma che come servizio esterno).
+Al momento i servizi sono legati all’interfacciamento con il database della Logical System s.r.l. nel quale sono riportate letture di sensori collegati a dei macchinari utensili. I valori dei sensori all'interno del database sono identificati tramite un codice che rappresenta il canale di ingresso dei vari input del controllore logico.
 I servizi attualmente disponibili consentono di:
 \begin{itemize}
 	\item Prelevare la lista dei PLC con la relativa descrizione, se presente.
@@ -151,46 +151,41 @@ I servizi attualmente disponibili consentono di:
 	\end{itemize}
 	\item Prelevare le misure da una tabella tramite una sottoscrizione.
 \end{itemize}
-\clearpage
-La struttura dell’URL dei servizi viene elencata da questa tabella, dove le virgole nei parametri di input rappresentano gli slash di una URL http:
+%\clearpage
+La struttura dell’URL dei servizi viene elencata da questa tabella.
 \begin{center}
 	\begin{tabular}{ | l | p{5.06cm} | p{5.06cm} |}
 		\hline
 		\textbf{Servizio} & \textbf{Input} & \textbf{Output} \\ \hline
-		getLastMeasure & \textit{ID} sensore & Ultima misura   \\ \hline
-		getMeasureFromTo & \textit{ID} sensore, data \textit{Da}, data \textit{A} & Tutte le misure storicizzate da \textit{Data} a \textit{Data} \\ \hline
-		getDetailedMeasureFromTo & \textit{ID} sensore, data \textit{Da}, data \textit{A} & Tutte le misure storicizzate prese dalla tabella degli estrusori, da \textit{Data} a \textit{Data}  \\ \hline
-		getMeasureLastMonth & \textit{ID} sensore, Data (\textit{Today}) & Tutte le misure dalla data \textit{Today} a un mese prima \\ \hline
-		getMeasureLastWeek & \textit{ID} sensore, Data (\textit{Today}) & Tutte le misure dalla data \textit{Today} a una settimana prima \\ \hline
-		getDetailedMeasureLastMonth & \textit{ID} sensore, Data (\textit{Today}) & Tutte le misure dalla data \textit{Today} a un mese prima, degli estrusori \\ \hline
-		getDetailedMeasureLastWeek & \textit{ID} sensore, Data (\textit{Today}) & Tutte le misure dalla data \textit{Today} a una settimana prima, degli estrusori \\ \hline
+		getLastMeasure & \textit{ID} sensore / \textit{annotazione} & Ultima misura   \\ \hline
+		getMeasureFromTo & \textit{ID} sensore / data \textit{Da} / data \textit{A} / \textit{annotazione} & Tutte le misure storicizzate da \textit{Data} a \textit{Data} \\ \hline
+		getDetailedMeasureFromTo & \textit{ID} sensore / data \textit{Da} / data \textit{A} / \textit{annotazione} & Tutte le misure storicizzate prese dalla tabella degli estrusori / da \textit{Data} a \textit{Data} / \textit{annotazione}  \\ \hline
+		getMeasureLastMonth & \textit{ID} sensore / Data (\textit{Today}) / \textit{annotazione} & Tutte le misure dalla data \textit{Today} a un mese prima \\ \hline
+		getMeasureLastWeek & \textit{ID} sensore / Data (\textit{Today}) / \textit{annotazione} & Tutte le misure dalla data \textit{Today} a una settimana prima \\ \hline
+		getDetailedMeasureLastMonth & \textit{ID} sensore, Data (\textit{Today}) / \textit{annotazione} & Tutte le misure dalla data \textit{Today} a un mese prima, degli estrusori \\ \hline
+		getDetailedMeasureLastWeek & \textit{ID} sensore, Data (\textit{Today}) / \textit{annotazione} & Tutte le misure dalla data \textit{Today} a una settimana prima, degli estrusori \\ \hline
 		subscribe & \{\textit{nome applicazione}, \textit{IP applicazione}, \textit{regola},\textit{coda o topic}\} & Misure del sensore caricate come messaggi sulla coda \\ \hline
 		unsubscribe & \textit{ID regola} & Annullamento del servizio di subscribe \\ \hline
 		getAllPlc & & Lista di tutti i sensori che la piattaforma offre con la relativa descrizione \\ \hline
 	\end{tabular}
 \end{center}
-
-Per regolare l’accesso ai servizi da parte degli utenti, avere quindi una forma di autenticazione, ogni servizio effettua un controllo nell'header della richiesta, valutando la presenza di un token. Se il token non è rilevato, la richiesta non viene considerata e un messaggio di errore viene restituito a chi l’ha inviata. \par
-Il servizio ActiveMQ è il MOM (Message Oriented Middleware) della piattaforma che funge da tramite tra le applicazioni collegate e i thread della piattaforma per il servizio di subscribe. il collegamento ad una istanza di ActiveMQ esterna alla piattaforma è opzionale, in quanto la piattaforma contiene al suo interno anche una versione embedded del broker. 
-\par
-Esporre risorse tramite servizi REST permette alla piattaforma di essere indipendente dal tipo di client che si collegano. L’unico requisito che un client deve rispettare per poter ottenere informazioni è il supporto del protocollo http: per poter inviare richieste, collegandosi quindi all’URL che riferisce il servizio, e interpretare il valore di ritorno dell’informazione (nel nostro caso in formato JSON).
+L'annotazione è un flag che indica se si vogliono ottenere i dati correlati dalla loro ontologia: inviare una richiesta con questo flag a false, restituisce i dati senza la loro ontologia. \capitalgrave{E} stata inserita nell'URL dei servizi perché presente nella lista degli sviluppi futuri previsti per la piattaforma, in modo da avere un punto di partenza per la sua completa implementazione.
 \clearpage
-\section{Architettura Backend}
-\subsection{Descrizione Use Case Aziendale}
-Il database con le misurazioni dei sensori è costituito da tre tabelle in cui sono presenti i dati: contengono i valori letti ed elaborati dai controllori logici legati ai sensori collegati ai vari macchinari in produzione che ripetutamente restituiscono i valori letti dai sensori; insieme ad altre quattro tabelle che, se unite con una query, contengono informazioni riguardo l’ontologia delle misure e delle misurazioni. La struttura dei record nelle tabelle dei dati è la stessa per tutti i macchinari, ma l’interpretazione dei valori cambia in base alla tipologia del macchinario e alla famiglia di appartenenza.
-
-Tutte le informazioni relative all’ultima lettura di un sensore vanno nella tabella principale tvmgenio. I dati relativi ad un macchinario che il controllore logico rileva sono inseriti in maniera diretta su un singolo record all’interno di questa tabella; quindi per ogni lettura viene creata una nuova riga contraddistinta dal plc che ha letto i dati (identificato dal proprio canale). 
-
-Le tabelle tvavtest e tvavext sono utilizzate per la storicizzazione dei dati. La prima per la storicizzazione generica di tutte le misurazioni, l’altra per la storicizzazione delle misurazioni dei macchinari estrusori. Per il fatto che contiene molti più valori parametrici aggiuntivi rispetto all’altra tabella, è stata anche definita come dettagliata (i servizi riferiti a questa tabella contengono la parola “detailed”).
-
-\begin{figure}[h]
+\subsection{Database Use Case Aziendale}
+Il database con le misurazioni dei sensori è costituito da sette tabelle. Tre tabelle contengono i valori letti ed elaborati dai controllori logici legati a sensori collegati ai vari macchinari in produzione che ripetutamente restituiscono questi valori; le altre quattro tabelle, se unite con una query, conterranno informazioni riguardo l’ontologia delle misure e delle misurazioni. La struttura dei record nelle tre tabelle dei dati è la stessa per tutti i macchinari, ma l’interpretazione dei valori cambia in base alla tipologia del macchinario e alla famiglia di appartenenza.
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{tabelle-backend.png}
 	\caption*{Figura 2.  Struttura delle tre tabelle dei dati}
 \end{figure}
-Una famiglia di un sensore specifica cosa rappresentano i valori e le misurazioni che sono effettuate. Quindi ad una famiglia è associata una ontologia delle misure e delle misurazioni. Riferita a questa ontologia si ha un servizio apposito che viene utilizzato per presentare il catalogo di sensori offerti dalla piattaforma. Ogni sensore ha la sua lista di campi con la loro ontologia e descrizione. In questo modo chi si registra nella piattaforma, è in grado di informarsi per quali sensori inviare richieste ai servizi REST. Il metodo restituisce un Json contenente tutte queste informazioni e c’è anche una pagina web che converte questo Json in una tabella; in questo modo il catalogo può essere visualizzato sia da una applicazione che tramite browser.
-\par
-L’ontologia descrive cosa rappresenta ogni campo significativo restituito dal sensore. Normalmente tutti i record hanno un campo che rappresenta il contatore principale dell’informazione che i plc registrano ma questa informazione cambia di significato da un macchinario all’altro. Infatti per i sensori collegati a dei silos, il contatore principale rappresenta la quantità di materiale presente in chili, mentre per gli estrusori rappresenta i metri di tubo prodotti. Perciò un’ontologia è fondamentale per documentare in maniera chiara tutte le informazioni che la piattaforma offre e renderle disponibili agli utenti in modo che possano gestire la scelta di quali sensori usare e per quali servizi.
+Tutte le informazioni relative all’ultima lettura di un sensore vanno nella tabella principale \textit{tvmgenio}. I dati che il controllore logico rileva sono inseriti in maniera diretta su un singolo record all’interno di questa tabella; quindi per ogni lettura viene creata una nuova riga contraddistinta dal canale di input al quale sono arrivati i dati. 
+
+Le tabelle \textit{tvavtest} e \textit{tvavext} sono utilizzate per la storicizzazione dei dati. La prima per la storicizzazione generica di tutte le misurazioni, l’altra per la storicizzazione delle misurazioni dei macchinari estrusori. Per il fatto che contiene molti più valori parametrici aggiuntivi rispetto alla precedente tabella, è stata anche definita come dettagliata (i servizi riferiti a questa tabella contengono la parola “detailed”).
+
+
+Una famiglia di un sensore specifica cosa rappresentano i valori e le misurazioni che sono effettuate. Quindi ad una famiglia sarà associata una ontologia delle misure e delle misurazioni. Riferita a questa ontologia si ha un servizio apposito che viene utilizzato per presentare il catalogo di sensori offerti dalla piattaforma. Ogni sensore ha la sua lista di campi con la loro ontologia e descrizione. In questo modo chi si registra nella piattaforma, è in grado di informarsi per quali sensori inviare richieste ai servizi REST. Il catalogo dei controllori logici è consultabile sia da applicazioni, il quanto il servizio restituisce un JSON contenente tutte queste informazioni, e da utenti: è presente anche una pagina web che converte questo JSON in una tabella.
+
+Tutti i record delle tre tabelle dei dati hanno un campo che rappresenta il contatore principale dell’azione svolta dal macchinario. Questa informazione cambia di significato da un macchinario all’altro. Infatti per i sensori collegati a dei silos, il contatore principale rappresenta la quantità di materiale presente in chili, mentre per gli estrusori rappresenta i metri di tubo prodotti.
 \clearpage
 \subsection{Use Case Diagram}
 \begin{figure}[h]
@@ -198,7 +193,7 @@ L’ontologia descrive cosa rappresenta ogni campo significativo restituito dal 
 	\includegraphics[width=0.8\textwidth]{use-case-utente.png}
 	\caption*{Figura 3. Use case lato utente}
 \end{figure}
-Lo use case lato utente mostra le operazioni che l’utente è in grado di fare nella piattaforma. L’utente può usare i servizi della piattaforma, questa operazione include il controllo del token perchè per poter usare i servizi l’utente deve essere riconosciuto come abilitato. Può usare il servizio di subscribe (sempre se abilitato): questo speciale servizio permette di essere notificati tramite metodologia push riguardo i dati della piattaforma, seguendo largamente il modello publisher/subscriber: appena si verifica la condizione specificata, il servizio informa l’utente inviando il cambiamento dei dati. In altre parole, realizza un servizio di monitoraggio dati in real time per l’utente. La sottoscrizione a questo servizio può essere annullata in qualsiasi momento tramite il servizio unsubscribe. La richiesta del token avviene tramite una apposita pagina web e la sottoscrizione alla piattaforma viene gestita dall’amministratore.
+Lo use case lato utente mostra le operazioni che l’utente è in grado di fare nella piattaforma. L’utente può usare i servizi della piattaforma, questa operazione include il controllo del token perchè per poter usare i servizi l’utente deve essere riconosciuto come abilitato. Può usare il servizio di subscribe (sempre se abilitato): questo speciale servizio permette di essere notificati tramite metodologia push riguardo i dati della piattaforma, seguendo largamente il modello publisher/subscriber: appena si verifica la condizione specificata, il servizio informa l’utente inviando il cambiamento dei dati. In altre parole, realizza un servizio di monitoraggio dati per l’utente. La sottoscrizione a questo servizio può essere annullata in qualsiasi momento tramite il servizio unsubscribe. Il token viene richiesto in una apposita pagina web e la sottoscrizione alla piattaforma viene gestita dall’amministratore.
 
 \begin{figure}[h]
 	\centering
@@ -206,7 +201,7 @@ Lo use case lato utente mostra le operazioni che l’utente è in grado di fare 
 	\caption*{Figura 4. Use case lato amministratore}
 \end{figure}
 
-Infatti come si vede dallo use case per l’amministratore, è lui che effettua la generazione del token a fronte di una richiesta di sottoscrizione. Una richiesta può anche essere rifiutata.
+Infatti come si vede dallo use case per l’amministratore, è lui che effettua la generazione del token a fronte di una richiesta di sottoscrizione alla piattaforma. Una richiesta può anche essere rifiutata.
 \clearpage
 \subsection{Class Diagram}
 Il class diagram risulta essere troppo grande per essere comprensibile all’interno di una singola immagine, perciò ne verranno descritti alcuni frammenti. \par
@@ -215,47 +210,46 @@ Il class diagram risulta essere troppo grande per essere comprensibile all’int
 	\includegraphics[width=0.8\textwidth]{sensor-data.png}
 	\caption*{Figura 5. SensorData e SensorDataList con interfaccia}
 \end{figure}
-In figura 5 è descritta la classe SensorData che si ottiene compilando lo schema avro. I nomi delle proprietà della classe hanno lo stesso nome dei campi della tabella in modo da avere una relazione univoca tra proprietà dell’oggetto e valore della colonna che si ottiene da una chiamata mysql. In questo modo è possibile inserire i valori ottenuti dal database all’oggetto avro con la chiamata di un solo metodo. SensorDataList è l’oggetto Avro che rappresenta il contenitore (quindi l’array json) di questi oggetti. Si vede infatti la proprietà sensorDataListContainer che è legata da una relazione 0..* con la classe SensorData. Per come è stata implementata la piattaforma ogni oggetto Avro deve avere il rispettivo oggetto lista contenitore. L’interfaccia RetrievedDataInterface rappresenta i metodi che ogni oggetto che si vuole restituire da un servizio REST, deve implementare. I metodi sono getItem per ottenere l’oggetto effettivo, getListContainer e add per ottenere l’oggetto contenitore nel caso in cui l’oggetto effettivo è una lista e per aggiungere un nuovo oggetto alla lista; i metodi per gli oggetti contenitore sono nella stessa interfaccia perchè salendo nella gerarchia delle classi degli oggetti Java generati con Avro, non c’è distinzione tra un oggetto contenitore e un oggetto singolo, entrambi ereditano dalla stessa classe padre; semplicemente un oggetto singolo restituirà null come listContainer e non eseguirà nessuna azione per l'inserimento. il metodo fieldsHashCode è un metodo per ottenere l’hashcode dell’oggetto usando solo i valori delle proprietà, serve per definire se due oggetti sono identici a livello delle sole specifiche proprietà definite all’interno del metodo. Usando RetrievedDataInterface è possibile interagire con qualsiasi sorgente dati nella backend purchè venga definito un oggetto Avro che rappresenti i dati che contiene. 
-\par
-Avere una rappresentazione dei dati come schema Avro permette di raggruppare tutti i possibili dati che una piattaforma può restituire come oggetti RetrievedDataInterface. In questo modo la piattaforma può evolvere e gestire diversi schemi Avro di differenti oggetti.
+In figura 5 è descritta la classe SensorData che si ottiene compilando lo schema avro. I nomi delle proprietà della classe hanno lo stesso nome dei campi della tabella in modo da avere una relazione univoca tra proprietà dell’oggetto e campo del record del database. In questo modo è possibile assegnare valori all’oggetto Avro con la chiamata di un solo metodo. SensorDataList è l’oggetto Avro che rappresenta il contenitore (quindi l’array JSON) di questi oggetti. Si vede infatti la proprietà sensorDataListContainer che è legata da una relazione 0..* con la classe SensorData: un sensorDataListContainer può contenere zero o più oggetti SensorData. Per come è stata implementata la piattaforma ogni oggetto Avro deve avere il rispettivo oggetto contenitore nello schema. L’interfaccia RetrievedDataInterface rappresenta i metodi che ogni oggetto che si vuole restituire da un servizio REST, deve implementare. I metodi sono getItem per ottenere l’oggetto effettivo, getListContainer e add per ottenere l’oggetto contenitore nel caso in cui l’oggetto effettivo è una lista e per aggiungere un nuovo oggetto alla lista; i metodi per gli oggetti contenitore sono nella stessa interfaccia perchè salendo nella gerarchia delle classi degli oggetti Java generati con Avro, non c’è distinzione tra un oggetto contenitore e un oggetto singolo, entrambi ereditano dalla stessa classe SpecificRecordBase. Semplicemente un oggetto singolo restituirà \textbf{null} come listContainer e non eseguirà nessuna azione per l'inserimento. il metodo fieldsHashCode è necessario per ottenere l’hashcode dell’oggetto usando solo i valori delle proprietà: serve per definire se due oggetti sono identici considerando le proprietà dell'oggetto definite nel metodo. Usando RetrievedDataInterface è possibile interagire con qualsiasi sorgente dati nella backend purchè venga definito un oggetto Avro che rappresenti i dati che contiene. In questo modo la piattaforma può evolvere e gestire diversi schemi Avro di differenti oggetti.
 \clearpage
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{subscribe-thread.png}
 	\caption*{Figura 6. SubscribeRule e SubscribeThread con interfaccia}
 \end{figure}
-Questo estratto di class diagram rappresenta l’oggetto thread che viene lanciato quando un client effettua una sottoscrizione al servizio push della piattaforma. Il thread contiene tutte le informazioni necessarie per eseguire query alla sorgente dati, rappresentata dall’oggetto connessione, che sono: la regola che deve eseguire ad ogni intervallo di tempo (intervallo CRON); riferimenti al broker di messaggistica dove andrà a  scrivere i nuovi dati che sono cambiati.
+In figura 6 è rappresentato l’oggetto \textit{thread} che viene mandato in esecuzione quando un'applicazione effettua una sottoscrizione al servizio subscribe della piattaforma. Il thread contiene tutte le informazioni necessarie per eseguire query alla sorgente dati (rappresentata dall’oggetto connessione) che sono: la regola che deve eseguire ad ogni intervallo di tempo (intervallo CRON) e riferimenti al broker di messaggistica dove andrà a scrivere i nuovi dati che sono cambiati.
+Una regola rappresenta un insieme di informazioni relative ad una specifica tabella nel backend che dichiarano la query di interrogazione da eseguire.
 \par \vspace*{2em}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{sensor-data-annotation.png}
 	\caption*{Figura 7. SensorDataAnnotation}
 \end{figure}
-Questo estratto di class diagram rappresenta l’oggetto annotazione che è presente negli oggetti Avro del caso d’uso aziendale. L’annotazione rappresenta l’ontologia legata alla misura (e non alla misurazione) che ogni singola proprietà dell’oggetto rappresenta. i campi che costituiscono una annotazione sono il nome dell’ontologia di riferimento e il suo ID.
+In figura 7 è rappresentato l’oggetto annotazione che è presente negli oggetti Avro del caso d’uso aziendale. L’annotazione rappresenta l’ontologia legata alla misura (e non alla misurazione) che ogni singola proprietà dell’oggetto rappresenta. I campi che costituiscono una annotazione sono il nome dell’ontologia di riferimento e il suo ID.
 \clearpage
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{subscribe-result.png}
 	\caption*{Figura 8. SubscribeRule e SubscribeResult}
 \end{figure}
-Questo estratto di class diagram rappresenta gli oggetti della regola espressi con lo schema Avro che permette di definire la query sql con oggetti annidati; insieme all’oggetto che viene restituito ad un client ad indicare l’esito della sottoscrizione al servizio di subscribe. L’oggetto regola ha come proprietà il nome dell’applicazione, l’ip dell’applicazione, la coda o topic in cui dovrà andare a scrivere e la regola, ovvero la query SQL. L’oggetto SubscribeResult ha come proprietà semplicemente un messaggio result e un valore intero che rappresenta l’ID che il server ha associato alla sua regola. Questo identificativo viene usato poi nel caso in cui l’utente vuole annullare la sottoscrizione al servizio di subscribe.
+In figura 8 è rappresentato l'oggetto ricavato dallo schema Avro che rappresenta l'oggetto contenente la regola di sottoscrizione che è utilizzato dalla piattaforma. La seconda classe rappresenta l’oggetto che viene restituito ad una applicazione ad indicare l’esito della sottoscrizione al servizio di subscribe. L’oggetto SubscribeRule ha come proprietà il nome dell’applicazione, l’ip dell’applicazione, la coda o topic di ActiveMQ in cui dovrà andare a scrivere e la regola che definisce la query SQL. L’oggetto SubscribeResult ha come proprietà semplicemente un messaggio result e un valore intero che rappresenta l’ID che il server ha associato alla regola cui riferisce. Questo identificativo viene usato nel caso in cui l’utente vuole annullare la sottoscrizione al servizio di subscribe.
 \par \vspace*{2em}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{rule-record.png}
 	\caption*{Figura 9. SubscribeRule e RuleRecord}
 \end{figure}
-
-La regola contiene: l’array dei campi del database dei quali si vuole essere notificati, ovvero l’utente viene notificato solo se viene registrato un cambiamento per quei campi che ha richiesto; la tabella dove effettuare la query; il CRON in formato stringa e la clausola where che è rappresentata da condition e formula. Condition rappresenta la definizione della where in maniera complessa, formata da più oggetti differenti e annidati; mentre formula rappresenta la where in una semplice stringa scritta a mano. Questa suddivisione della where è necessaria per il nostro caso d’uso, perchè in Microsoft Dynamics NAV non si può creare una finestra di input in cui ogni operazione viene aggiunta in maniera incrementale, perciò la query viene indicata direttamente come stringa.
+In figura 9 viene visualizzato più nel dettaglio l'oggetto RuleRecord, che definisce la query SQL di un SubscribeResult.
+Un oggetto RuleRecord contiene: l’array dei campi del database dei quali si vuole essere notificati (l’utente viene notificato solo se viene registrato un cambiamento per questi campi); la tabella da interrogare; il CRON in formato stringa e la clausola where che è rappresentata da condition e formula. Condition rappresenta la definizione della where in maniera complessa, formata da più oggetti annidati; mentre formula rappresenta la where in una semplice stringa scritta a mano. 
 \par \vspace*{2em}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{rules.png}
 	\caption*{Figura 10. SubscribeRule generale e per NAV con interfaccia}
 \end{figure}
-Per rendere la regola generica e implementabile in ogni situazione è stata definita un’interfaccia. Questa interfaccia implementa i metodi necessari per rappresentare una regola, quindi metodi che restituiscono i campi della query, la tabella, la where, ecc…
-\par
-La comodità di questa soluzione sta nel fatto che l’implementazione della where non dipende dallo schema Avro. Il problema che ha fatto nascere il bisogno di questa interfaccia è il seguente. La piattaforma utilizza lo schema della regola complesso in cui la where può essere definita come formula o come condition, e condition è un valore opzionale. Anche se condition è opzionale, quindi può non essere presente (nota del sito di avro), nell’atto pratico deve esserlo con il valore di default\footnote{https://stackoverflow.com/questions/22939391/generating-an-avro-schema-with-optional-values}, nel Json che viene inviato al servizio di subscribe. Microsoft Dynamics NAV usa uno schema diverso da quello della piattaforma, una versione semplificata della regola in cui la condition non è definita. Questo significa che se la piattaforma implementa lo schema complesso della regola, quando riceve richieste di subscribe da parte di un client Navision, non è in grado di processare la richiesta in quanto nello schema non è presente il valore condition. In questo modo basta fare in modo che il thread accetti regole di tipo SubscribeRuleInterface per riuscire a gestire regole sia di Navision che di altre applicazioni.
+Per rendere la regola generica e implementabile in ogni situazione è  definita un’interfaccia, come descritto in figura 10. Questa interfaccia implementa i metodi necessari per rappresentare una regola, quindi metodi che restituiscono i campi della query, la tabella, la where e il CRON.
+
+Il problema che ha fatto nascere il bisogno di questa interfaccia è il seguente. La piattaforma utilizza lo schema della regola complesso in cui la query SQL può essere definita come formula o come condition, e condition è un valore opzionale. Anche se condition è opzionale, quindi può non essere presente nel JSON che arriva al servizio di subscribe, nell’atto pratico deve esserlo con il valore di default\footnote{https://stackoverflow.com/questions/22939391/generating-an-avro-schema-with-optional-values}. Microsoft Dynamics NAV usa uno schema diverso da quello della piattaforma, una versione semplificata della regola in cui la condition non è definita perché in Microsoft Dynamics NAV non si può creare una finestra di input in cui ogni operazione viene aggiunta in maniera incrementale, perciò la query viene indicata direttamente come stringa. Questo significa che se la piattaforma implementa lo schema complesso della regola, quando riceve richieste di subscribe da parte di un client Navision, non è in grado di processare la richiesta in quanto nello schema non è presente il valore condition. Mentre se si fa in modo che la piattaforma accetti regole di tipo SubscribeRuleInterface, riesce a gestire regole sia di Navision che di altre applicazioni.
 \clearpage
 \begin{figure}[h]
 	\centering
@@ -263,86 +257,97 @@ La comodità di questa soluzione sta nel fatto che l’implementazione della whe
 	\caption*{Figura 11. Classe astratta per gestire le connessioni}
 \end{figure}
 
-Questo estratto di class diagram rappresenta la gestione delle connessioni nella piattaforma. Per poter estendere la backend a qualsiasi sorgente dati, è stata definita una classe astratta AbstractConnection che ha come metodi generali open e close, di primaria funzione per ogni sorgente dati come file o database. Questi metodi possono essere quindi sovrascritti in base al corretto funzionamento desiderato, da classi figlie che rappresenteranno l’implementazione concreta della connessione. Per il nostro use case è necessario inoltre avere connessioni a database SQL perciò è stata definita la classe astratta AbstractSQLConnection che rappresenta una connessione qualunque ad un database SQL: ha come proprietà il path in cui si trova il database, username e password per collegarsi e il nome del database. Questa classe così definita rappresenta connessioni sia a database Mysql, dove solitamente ci si collega ad un server, sia connessioni di tipo Sqlite dove il database è un file su disco. Le implementazioni fisiche sono quindi differenziate per MySQL e Sqlite a cui sono state aggiunte un timer per fare in modo di chiudere la connessione dopo 10 minuti di inutilizzo.
+La figura 11 rappresenta la gestione delle connessioni nella piattaforma. Per poter estendere la backend a qualsiasi sorgente dati, è stata definita una classe astratta AbstractConnection che ha come metodi generali open e close, di primaria funzione per ogni sorgente come file o database. Questi metodi possono essere quindi sovrascritti in base al corretto funzionamento desiderato, da classi che rappresenteranno l’implementazione concreta della connessione. Per il nostro use case è necessario inoltre avere connessioni a database SQL perciò è stata definita la classe astratta AbstractSQLConnection che rappresenta una connessione qualunque ad un database SQL: ha come proprietà il path in cui si trova il database,  username e password per collegarsi e il nome del database. Questa classe così definita rappresenta connessioni sia a database MySQL, dove solitamente ci si collega ad un server, sia connessioni di tipo SQLite dove il database è un file su disco. Le implementazioni fisiche sono quindi differenziate per MySQL e Sqlite a cui sono state aggiunte un timer per fare in modo di chiudere la connessione dopo 10 minuti di inutilizzo.
 \clearpage
 \section{Struttura Dati Json}
 L’utilizzo del framework Avro ha questi vantaggi\footnote{http://blog.cloudera.com/blog/2011/05/three-reasons-why-apache-avro-data-serialization-is-a-good-choice-for-openrtb/}:
 \begin{itemize}
-	\item Avro può gestire in maniera dinamica i dati, utile in situazioni dove lo schema dei file non è noto al momento della compilazione. La gestione dinamica non richiede di generare una classe da utilizzare all’interno del programma, ma avviene tramite un GenericRecord. In questo modo i dati possono essere inseriti con dei metodi put. Un piccolo svantaggio del GenericRecord è che l’utilizzo dei metodi put/get richiede di specificare di quale campo si vuole inserire o richiedere il valore; 
-	\item Mentre nella gestione dei dati con l’utilizzo di classi che contengono lo schema (code-generation)\footnote{https://stackoverflow.com/questions/30277442/what-does-code-generation-mean-in-avro-hadoop}, i metodi get/put che permettono di accedere ai dati sono auto esplicativi ed esiste un metodo per ogni campo definito nello schema. Inoltre i metodi di get e put accettano come parametro anche il nome del campo e quindi il vantaggio dell’utilizzo di Avro si è visto nella popolazione dell’oggetto che rappresenta i valori dei sensori, avendo come nomi di proprietà gli stessi campi della tabella. 	
+	\item Avro può gestire in maniera dinamica i dati, utile in situazioni dove lo schema dei file non è noto al momento della compilazione. La gestione dinamica non richiede di generare una classe da utilizzare all’interno del programma, ma avviene tramite un GenericRecord. In questo modo i dati possono essere inseriti con dei metodi put.
+	\item Mentre nella gestione dei dati con l’utilizzo di classi che contengono lo schema (code-generation)\footnote{https://stackoverflow.com/questions/30277442/what-does-code-generation-mean-in-avro-hadoop}, i metodi get/put che permettono di accedere ai dati sono auto esplicativi ed esiste un metodo per ogni campo definito nello schema. Inoltre i metodi di get e put accettano come parametro anche il nome del campo e quindi il vantaggio dell’utilizzo di Avro si vede, ad esempio, nella popolazione dell’oggetto SensorData. 	
 \end{itemize}
-La struttura che abbiamo definito per rappresentare i dati della tabella tvmgenio è la seguente.
+La struttura che abbiamo definito per rappresentare i dati della tabella \textit{tvmgenio} è la seguente.
 {\fontfamily{pcr}\selectfont
 \lstinputlisting[breaklines]{sensor-data.txt}
 }
 
-Vengono ripresi gli stessi campi del record nel database MySQL, in modo da avere una relazione diretta con il nome e inserire quindi i valori tramite la proprietà put con un singolo metodo.
-\par
+Vengono ripresi gli stessi nomi dei campi del record, in modo da avere una relazione diretta e inserire quindi i valori tramite il metodo put.
+
 Inoltre sono presenti i campi delle annotazioni, che sono altri oggetti contenenti i valori di ID e nome dell’ontologia della misura. L’ontologia delle misure nello schema Avro è chiamata annotazione ed è un valore opzionale.
-L’annotazione cambia il comportamento dei servizi della piattaforma, infatti se viene richiesta, la query di interrogazione dei dati e il popolamento della lista contenitore cambiano. Per come è strutturato il database mysql aziendale, quando l’annotazione viene richiesta, lo stesso oggetto della tabella viene ripetuto più volte per ogni annotazione che ha e per evitare di trasferire tutto il result set in una variabile in memoria e poi effettuare un accorpamento per risultati simili, si è scelto di fare tutto mentre si scorre il result set tenendo conto del valore precedente dell’oggetto: nel caso in cui l’oggetto è lo stesso, i campi vengono saltati e si passa a popolare solo l’oggetto annotazione che non viene inserito all’interno del nuovo oggetto ma in quello precedente. In questo modo si ha sempre una sola versione dello stesso oggetto con le annotazioni aggiornate. Per questa modalità di inserimento e gestione si è dovuto fare un controllo aggiuntivo sul fatto di essere arrivati all’ultima riga del result set, perché inserendo il valore precedente quando non corrisponde al valore attuale, succede che arrivati all’ultimo elemento questo non verrà mai inserito.
-\par
-Gli schemi Avro per le altre tabelle SensorHystoricalData e SensorHystoricalDataExt sono fatte allo stesso modo di SensorData.
-\clearpage
-\subsection{Struttura della regola di sottoscrizione}
+L’annotazione cambia il comportamento dei servizi della piattaforma, infatti se viene richiesta, la query di interrogazione dei dati e il popolamento della lista contenitore cambiano. Per come è strutturato il database aziendale, quando l’annotazione viene richiesta, lo stesso oggetto della tabella viene ripetuto più volte, per ogni annotazione che ha, e per evitare di trasferire tutto il ResultSet in una variabile in memoria, come un HashSet, per evitare ripetizioni degli stessi risultati, si è scelto di fare tutto mentre si scorre l'insieme di record, tenendo conto del valore precedente dell’oggetto: nel caso in cui l’oggetto è lo stesso, i campi vengono saltati e si passa a popolare solo l’oggetto annotazione che non viene inserito all’interno del nuovo oggetto ma in quello precedente. In questo modo si ha sempre una sola versione dello stesso oggetto con le annotazioni aggiornate. Per questa modalità di inserimento e gestione si è dovuto fare un controllo aggiuntivo sul fatto di essere arrivati all’ultima riga del ResultSet, perché inserendo il valore precedente quando non corrisponde al valore attual avviene che, arrivati all’ultimo elemento questo non verrà mai inserito.
+
+Gli schemi Avro per le altre tabelle per la storicizzazione, rispettivamente SensorHistoricalData per tvavtest e SensorHistoricalDataExt per tvavext, sono fatte allo stesso modo di SensorData.
+%\clearpage
+\subsection{Struttura della regola di subscribe}
 Lo schema Json che rappresenta una regola per il servizio di Subscribe è il seguente. 
 {\fontfamily{pcr}\selectfont
 	\lstinputlisting[breaklines]{subscribe-rule.txt}
 }
-Come già detto, nello schema Json che il servizio di subscribe riceve, viene specificato il nome e l’indirizzo IP dell’applicativo che richiede la sottoscrizione, il nome della coda o del topic del message broker e la regola, un oggetto chiamato SubscribeRule che contiene tutte le informazioni riguardo la regola di subscribe. Queste informazioni sono: i campi della tabella che l’utente vuole popolati nei messaggi di ritorno, la query che il thread deve effettuare sul database, la tabella che deve essere interrogata e un CRON che indica l’intervallo di tempo ogni quanto il thread si deve attivare.
+Nel messaggio JSON che il servizio di subscribe riceve viene specificato, il nome e l’indirizzo IP dell’applicativo che richiede la sottoscrizione, il nome della coda o del topic del message broker e la regola, un oggetto chiamato SubscribeRule che contiene tutte le informazioni riguardo la query SQL che indica a quali dati chi richiede il servizio è interessato.
 \clearpage
-Un generico Json che potrebbe essere inviato al servizio di Subscribe da parte di un client è il seguente.
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.4\textwidth]{subscribe-json-1.png}
-	\caption*{Figura 12. SubscribeRule in formato Json}
-\end{figure}
-\par
-In questo schema le operazioni SQL sono descritte da enum che hanno come simboli tutti i possibili operatori. Ci sono gli Operatori di Confronto, gli Operatori Aritmetici, gli Operatori per le operazioni bit a bit, gli Operatori Binari e gli Operatori che si applicano ad altre sub-query. Il punto di partenza della condition è un oggetto Formula che ha un oggetto FormulaOperation. Da questo oggetto FormulaOperation si differenziano operazioni che comprendono operatori logici binari come and, or, ecc... ; operazioni che comprendono operatori logici che si applicano ad altre sotto-query come any, some, ecc… e infine operazioni singole che comprendono operatori di confronto, aritmetici, ecc… tra due operandi.
-\par
-Una versione schematizzata della struttura di una query è la seguente.
+
+\subsection{Struttura della Condition}
+Nell'oggetto \textit{condition} le operazioni SQL sono descritte da enum che hanno come simboli tutti i possibili operatori. Sono presenti:
+\begin{itemize}
+	\item operatori di confronto
+	\item operatori aritmetici
+	\item operatori per le operazioni bit a bit
+	\item operatori binari
+	\item operatori che si applicano ad altre sub-query come ANY, ALL e SOME
+\end{itemize}
+Il punto di partenza di una \textit{condition} è un oggetto Formula che può essere espresso in un oggetto FormulaOperation. Da questo oggetto FormulaOperation si differenziano operazioni che comprendono gli operatori sopra descritti.
+
+Uno schema che rappresenta l'evoluzione di un oggetto Condition è rappresentato in figura 13.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{struttura-query-tree.png}
 	\caption*{Figura 13. Schema ad albero della definizione di condition}
 \end{figure}
 \clearpage
-Mentre lo schema Avro di una SubscribeRule inviata da parte di un client Microsoft Dynamics NAV è questo.
+Un generico JSON che potrebbe essere inviato al servizio di Subscribe da parte di un applicazione è rappresentato in figura 12.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{subscribe-json-1.png}
+	\caption*{Figura 12. SubscribeRule in formato Json}
+\end{figure}
+
+Mentre lo schema Avro della SubscribeRule inviata da parte di un client Microsoft Dynamics NAV viene descritto da questo schema.
 \begin{center}
 		{\fontfamily{pcr}\selectfont
 			\lstinputlisting[breaklines]{subscribe-rule-nav.txt}
 		}
 \end{center}
-A differenza dello schema principale, in questo esiste solo il valore formula nello schema. E questo è un possibile Json che potrebbe essere inviato al servizio di subscribe da parte di un client Navision.
+A differenza dello schema principale, in questo schema la query SQL può essere definita solo come stringa. 
+
+In figura 14 è descritto un possibile JSON che potrebbe essere inviato al servizio di subscribe da parte di un client Navision.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.4\textwidth]{subscribe-json-2.png}
 	\caption*{Figura 14. SubscribeRule in formato Json proveniente da NAV}
 \end{figure}
-\par
-In Avro i nomi consentiti per i campi possono iniziare soltanto con le lettere a-z sia maiuscole che minuscole e l’underscore, perciò l’implementazione di uno schema che abbia l’operazione come valore key e gli operandi come value risulta impraticabile, inoltre i nomi degli operatori logici e aritmetici sono stati codificati secondo il loro nome sempre per questa limitazione dei nomi.
-\par
-Usiamo Avro anche per la regola di Subscribe in modo da avere una soluzione robusta e sicura, ed avere un controllo immediato per quanto riguarda la ricezione di Json malformati: nel momento in cui il Json arriva al server, è in formato stringa senza nessun controllo. Viene poi convertito in un byte array, il formato serializzato che Avro può interpretare, seguendo proprio lo schema Avro. In questo modo si riesce poi a istanziare un oggetto che rappresenta una regola di subscribe. In questo modo si può elaborare una regola, quindi creare un thread sul server, creare una coda nel broker,… prendendo i dati dalle proprietà get dell’oggetto anziché effettuare il parsing manualmente dalla stringa Json.
+
+Viene usato Avro anche per la regola di Subscribe per avere una soluzione robusta e sicura, e avere un controllo immediato per evitare di ricevere JSON malformati. Nel momento in cui il JSON arriva al server, è in formato stringa senza nessun controllo; viene poi convertito in un byte array, il formato serializzato che Avro può interpretare, seguendo proprio uno schema. In questo modo si riesce poi a istanziare un oggetto che rappresenta una regola di subscribe, per le operazioni come la creazione del thread, o la creazione della coda nel broker di messaggistica, si prendono i dati direttamente dall'oggetto anziché effettuare il parsing in base al nome dei campi dalla stringa JSON.
 
 \section{Servizio di Subscribe}
-Il servizio di subscribe è composto da un oggetto Executor che organizza un “pool” di thread, di numero indefinito, la quale esecuzione verrà gestita dall’executor stesso. Un thread rappresenta l’oggetto che ha il compito di gestire una singola regola ricevuta dal servizio. La gestione dei thread rimane possibile grazie al metodo submit dell executor che restituisce un Future$\langle?\rangle{}$. Questo tipo di oggetto rappresenta lo stato di esecuzione di un thread e grazie a questo è possibile fermarlo in qualsiasi momento chiamando il metodo terminate. Cosi è come funziona il servizio di Unsubscribe. La struttura dati che gestisce il Subscribe è una hashmap che associa all’id della regola ricevuta dal servizio il thread che andrà a gestirla. 
+Il servizio di subscribe è composto da un oggetto Executor che organizza un “pool” di thread, di numero indefinito. L'esecuzione di questi thread viene gestita dall’executor stesso. Un thread rappresenta l’oggetto che ha il compito di gestire una singola regola ricevuta dal servizio. La gestione dei thread rimane possibile grazie al metodo submit dell executor che restituisce un Future$\langle?\rangle{}$. Questo tipo di oggetto rappresenta lo stato di esecuzione di un thread e grazie a questo è possibile fermarlo in qualsiasi momento chiamando il metodo terminate. Il servizio di Subscribe, per tenere traccia di ogni thread che è stato creato, gestisce una hashmap che associa all’id della regola ricevuta dal servizio il thread che andrà a gestirla. 
 
-Il server una volta che riesce a mandare in esecuzione correttamente un thread, restituisce un Json che indica se l’operazione è andata a buon fine. Lo schema di questo oggetto SubscribeResult è il seguente.
+Il server una volta che riesce a mandare in esecuzione correttamente un thread, restituisce un JSON che indica se l’operazione è andata a buon fine. Lo schema di questo oggetto SubscribeResult è il seguente.
 \begin{center}
 		{\fontfamily{pcr}\selectfont
 			\lstinputlisting[breaklines]{subscribe-result.txt}
 		}
 \end{center}
-Questo oggetto definisce un messaggio result che indica il termine dell’operazione e un intero che rappresenta l’ID associato alla regola che il client potrà poi usare per annullare la sottoscrizione di questa regola al servizio.
-Il thread per capire se i dati sono cambiati nel database, mantiene una struttura dati che contiene l’hashcode dei record che ottiene dalla query. Questo hashcode è mantenuto da un oggetto che salva in due proprietà diverse l’hash della chiave del record e l’hash del corpo del record. Questa gestione permette di fare in modo che la posizione del valore hash nella hashmap non sia legato con la posizione del record nel risultato della query. In questo modo se il contenuto di un record cambia, indipendentemente dalla sua posizione nel result set, viene aggiornato nella hashmap seguendo i valori di chiave primaria (che sono fissi e non cambiano per definizione). \newline
-Nel Subscribe per applicazioni Microsoft Dynamics NAV non è stato possibile utilizzare lo stesso sistema di una coda ActiveMQ, per la mancanza di NAV di poter avere un servizio sempre attivo che andasse a leggere nella coda. Per questo Navision ha un servizio ad hoc nel quale il thread che gestirà la sua sottoscrizione andrà a scrivere i dati che gli sono pervenuti dalla query al database e dei quali ha notato un cambiamento e NAV aggiungerà questi nuovi dati nella sua tabella dei valori real time. Il client Java per inviare messaggi al servizio di NAV è stato auto-generato tramite la WSDL messa a disposizione proprio dal servizio di NAV. Inoltre nel connettersi al servizio, bisogna autenticare il client Java con un profilo che abbia i permessi di scrivere nel servizio NAV. L’autenticazione avviene a livello di profilo windows tramite il protocollo NTLM. \newline
+Questo oggetto definisce un messaggio result che indica il termine dell’operazione e un valore numerico che rappresenta l’ID associato alla regola che l'applicazione potrà poi usare per annullare la sottoscrizione a questo servizio.
+Il thread per capire se i dati sono cambiati nel database, mantiene una struttura dati che contiene l’hashcode dei record che ottiene dalla query. Questo hashcode è salvato in un oggetto che, in due proprietà diverse, rappresenta l’hash della chiave del record e l’hash del corpo del record. Questa gestione permette di fare in modo che la posizione del valore hash nella hashmap non sia legato alla posizione del record nel ResultSet. In questo modo se il contenuto di un record cambia, indipendentemente dalla sua posizione, viene aggiornato nella hashmap seguendo i valori di chiave primaria (che sono fissi e non cambiano per definizione).
+
+Il servizio di Subscribe notifica l'applicazione del cambiamento dei dati tramite un broker che funge da intermediario tra l'applicazione e la piattaforma. Per i client Microsoft Dynamics NAV non è stato possibile utilizzare lo stesso sistema di una coda ActiveMQ, per la mancanza di NAV di poter avere un servizio sempre attivo che andasse a leggere nella coda. Per questo Navision ha un servizio ad hoc nel quale il thread che gestisce la sua sottoscrizione va scrivere i dati dei quali ha notato un cambiamento e NAV aggiungerà questi nuovi dati in una tabella. Il client Java per inviare messaggi al servizio di NAV è stato generato automaticamente tramite la WSDL messa a disposizione proprio dal servizio di NAV. Inoltre nel connettersi al servizio, bisogna autenticare il client Java con un profilo che abbia i permessi di scrivere nel servizio NAV. L’autenticazione avviene tramite il profilo dell'utente Windows con il protocollo NTLM.
 
 \section{Token Authentication}
-Un client per poter utilizzare un servizio deve essere abilitato e per farlo deve fare richiesta di un token, tramite una apposita pagina. Nella pagina le informazioni da inserire sono il nome dell’applicazione, il suo IP, le credenziali che si vorranno usare per accedere alla pagina personale di gestione dei servizi e la sua email, tramite la quale verrà notificato del suo token. Una volta inviata la richiesta, questa verrà inserita all’interno di un database di amministrazione, che con la tabella Requests riferirà tutte le richieste di token inviate dagli utenti. Il token è una stringa di caratteri alfanumerica che rappresenta l’abilitazione dell’utente all’utilizzo dei servizi della piattaforma. È generato tramite la classe UUID di java in modo da garantire l’univocità di ogni token.
-\par
-Una pagina di gestione permette ad un amministratore di abilitare l’utente ad usare i servizi, quindi genererà un token specifico per quel client, che verrà notificato in qualche modo della generazione del suo token.
-Una volta ottenuto il token, l’utente che si è sottoscritto ad usare i servizi deve impostarlo nell’header di ogni richiesta. È proprio grazie a questo che un client riesce ad utilizzare i servizi della piattaforma. Il controllo dell’header che arriva avviene sullo stesso database delle richieste ma in una altra tabella contenente tutti i token che sono stati rilasciati agli utenti. Se un token che arriva ad un servizio rientra nei token registrati, allora chi vuole usare quel servizio può farlo.
-\par
-Con il sistema del token è stato implementato anche un modo per tenere traccia delle statistiche di utilizzo dei servizi da parte degli utenti. Nel database è presente una tabella dei servizi contenente i nomi con il rispettivo ID di tutti i servizi che sono presenti nella piattaforma. Avendo associato un ID ad ogni servizio, è possibile tenere delle variabili per ogni ID: quando un utente effettua una richiesta di abilitazione, sceglie quali servizi vuole attivare e in questo modo popola una lista che contiene l’id di ogni servizio che vuole abilitare. Quando la richiesta viene accettata, questa lista è inserita anche nella tabella delle sottoscrizioni attive e ne viene generata una simile con tutti i valori a zero. Questa altra lista rappresenta l’utilizzo dei servizi nella lista dei servizi attivi, dove la posizione di un ID è la stessa nella lista degli utilizzi. In questo modo quando un utente che ha una lista di servizi attivi come questa [1,2,3] effettua una chiamata al servizio 3, nella lista degli utilizzi, il contatore nella terza posizione viene incrementato di 1 [0,0,1]. questo avviene automaticamente nella stessa funzione che controlla se un client è abilitato ad usare un servizio.
+Un client per poter utilizzare un servizio deve essere abilitato. L'abilitazione ai servizi della piattaforma si ottiene tramite una apposita pagina. Nella pagina di richiesta le informazioni da inserire sono il nome dell’applicazione, il suo IP, le credenziali che si vorranno usare per accedere alla pagina personale di gestione dei servizi e un indirizzo email, tramite il quale l'utente che effettua la richiesta di abilitazione  verrà notificato del suo token. Una volta inviata una richiesta, questa viene inserita all’interno del database di amministrazione, che con una tabella chiamata Requests riferisce tutte le richieste di token che sono state ricevute. Il token è una stringa di caratteri alfanumerici che rappresenta l’abilitazione dell’utente all’utilizzo dei servizi della piattaforma. È generato tramite la classe UUID di java in modo da garantire l’univocità di ogni token.
+
+Una pagina di gestione permette ad un amministratore di abilitare una applicazione ad usare i servizi, quindi genererà un token specifico per quell'applicazione.
+Una volta ottenuto il token, l’utente che si è sottoscritto ad usare i servizi deve impostarlo nell’header di ogni richiesta. Un'altra tabella nello stesso database amministrativo contiene tutti i token che sono stati rilasciati alle applicazioni. Se un token che arriva ad un servizio rientra nei token registrati, allora chi vuole usare quel servizio può farlo.
+
+Con il sistema del token è stato implementato anche un sistema per tenere traccia delle statistiche di utilizzo dei servizi da parte delle applicazioni. Nel database amministrativo è presente una tabella dei servizi contenente nome e ID di tutti i servizi che sono presenti nella piattaforma. Avendo associato un ID ad ogni servizio, è possibile tenere delle variabili per ogni ID: quando un utente effettua una richiesta di abilitazione, sceglie quali servizi vuole attivare e in questo modo popola una lista che contiene l’ID di ogni servizio che vuole gli sia abilitato. Quando la richiesta viene accettata, questa lista è inserita nella tabella delle sottoscrizioni attive e ne viene generata una simile con tutti i valori a zero. Questa altra lista rappresenta l’utilizzo dei servizi, dove la posizione di un ID è la stessa nella lista degli utilizzi. In questo modo quando un utente che ha una lista di servizi attivi come questa [1,2,3] effettua una chiamata al servizio 3, nella lista degli utilizzi, il contatore nella terza posizione viene incrementato di 1 [0,0,1]. Questo avviene automaticamente durante il controllo del token.
 \clearpage
 \section{Gestione degli errori}
 \subsection{Schema Avro}
@@ -352,19 +357,19 @@ Con il sistema del token è stato implementato anche un modo per tenere traccia 
 		}
 \end{center}
 
-Per dare un feedback all’utente in caso di utilizzo errato dei servizi, viene restituito il messaggio di errore dell’eccezione che viene generata dal sistema, notificando l’utente di cosa è successo. A questa eccezione è associato un numero che rappresenta l’hashcode della classe, in questo modo si definisce un codice di errore per categoria: le NullPointerException hanno il loro codice, cosi come le IllegalArgumentException, ecc… e un livello di errore in base alla gravità di cosa è successo.
+Per dare un feedback all’applicazione in caso di utilizzo errato dei servizi, viene restituito il messaggio di errore dell’eccezione che viene generata dal sistema come messaggio JSON, seguendo questo schema Avro. A questa eccezione è associato un numero che rappresenta l’hashcode della classe, in questo modo si definisce un codice di errore per categoria, ad esempio le eccezioni di tipo NullPointerException hanno il loro codice e IllegalArgumentException hanno il loro codice; e un livello di errore in base alla gravità di cosa è successo.
 
 \section{Database Amministrativo}
-La piattaforma ha come basi di dati principale un database Sqlite che contiene informazioni riguardo le richieste di token che sono arrivate; regole che sono attualmente registrate e quindi in esecuzione; utenti attualmente abilitati ad usare la piattaforma il loro utilizzo dei servizi. \newline
-Questa immagine mostra, ad esempio, la gestione delle regole di subscribe attualmente attive.
+La piattaforma ha come base di dati principale un database SQLite che contiene informazioni riguardo le richieste registrate; regole che sono attualmente attive; applicazioni abilitate ad usare la piattaforma e il loro utilizzo dei servizi.
+In figura 15 è mostrata la gestione delle regole di subscribe attualmente attive.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{db-rules.png}
 	\caption*{Figura 15. Screenshot della gestione delle Rules}
 \end{figure}
 \clearpage
-Il database amministrativo della piattaforma ha, codificata nel metodo principale che viene eseguito quando mandato in esecuzione, lo scheletro delle tabelle. In questo modo la piattaforma genera il suo ambiente di lavoro ogni volta che viene avviata in un nuovo contesto in cui il database non è presente. La piattaforma è così portabile e indipendentemente da dove viene lanciata, generando ogni volta il database con un amministratore di default. \newline
-La piattaforma ha anche questa funzionalità: per rispettare la struttura di un login in ambiente client/server, anche in assenza di un server php, una hashmap di sessioni regola il login degli utenti. Come session ID viene usato l’hashcode di username e password concatenate e la sessione contiene username e password di chi effettua il login in modo da poter inviare al client un cookie contenente il session ID e permettergli di visualizzare il contenuto delle pagine. Il cookie ha durata di 1 ora e vale su tutto il dominio /ls della piattaforma.
+La piattaforma è in grado di creare il database amministrativo autonomamente, ad esempio nel caso in cui venga avviata per la prima volta, avendo codificate nel metodo principale, la struttura delle tabelle. In questo modo la piattaforma genera il suo ambiente di lavoro ogni volta che viene avviata in un nuovo contesto in cui il database non è presente. La piattaforma è così portabile e indipendente da dove viene lanciata, generando ogni volta il database con un amministratore di default.
+La piattaforma ha anche questa funzionalità: per rispettare la struttura di un login in ambiente client/server, anche in assenza di un server php, una hashmap di sessioni regola il login degli utenti. Come session ID viene usato l’hashcode della stringa che si ottiene concatenando username e password dell'utente e la sessione contiene username e password di chi effettua il login in modo da poter inviare al browser un cookie contenente il session ID e permettergli di visualizzare il contenuto delle pagine. Il cookie ha durata di 1 ora e vale su tutto il dominio "/ls" della piattaforma.
 
 \section{Espressioni CRON}
 Le espressioni cron sono utilizzate in ambienti Unix-like per eseguire una determinata operazione in un determinato intervallo di tempo (per esempio ogni minuto 10 di ogni giorno). Utilizza una sintassi particolare formata nel modo seguente:
@@ -457,29 +462,40 @@ Per poter effettuare il servizio di sottoscrizione in NAV è stata generata la p
 \clearpage
 \section{Manualistica}
 \subsection{Installazione e avvio della piattaforma}
-La piattaforma si presenta come un jar eseguibile. è necessario fornire parametri di input. Un esempio per lanciare la piattaforma in locale è rappresentato in figura 18
+La piattaforma si presenta come un jar eseguibile a cui è necessario fornire parametri di input. Un esempio per lanciare la piattaforma in locale è rappresentato in figura 18.
 \begin{figure}[h]
 			\centering
 			\includegraphics[width=0.8\textwidth]{lancio-piattaforma.png}
 			\caption*{Figura 20. Avvio della piattaforma con parametri}
 \end{figure}
 
-i parametri sono:
+I parametri sono:
 {\fontfamily{pcr}\selectfont
 	\lstinputlisting[breaklines]{launch-parameters.txt}
 }
-il parametro host definisce l'indirizzo ip sul quale sarà in esecuzione la piattaforma; allo stesso modo il parametro port definisce la porta.
-Il parametro db indica il path del database sqlite di amministrazione. se il database non esiste al percorso specificato viene creato automaticamente con un profilo amministratore di default. il comando ow sta è un'abbreviazione di overwrite e indica se deve essere sovrascritto con un nuovo database di default il database che già esiste nel path specificato. se ow è presente il database viene sovrascritto.
-i tre parametri che contengono la parola platform indicano rispettivamente in ordine di comparsa: indirizzo ip, porta e nome del database relativi al server in cui il database con i dati dei sensori è in esecuzione.
-username e password sono le credenziali con le quali avviene il collegamento al database con i dati. sono opzionali. infine broker indica l'indirizzo ip al quale il servizio activemq è in esecuzione. se il parametro non è presente viene lanciato il broker embedded della piattaforma.
+Il parametro host definisce l'indirizzo ip sul quale sarà in esecuzione la piattaforma, mentre il parametro port definisce la porta.
+Il parametro db indica il path del database SQLite di amministrazione. Il comando opzionale ow è un'abbreviazione di overwrite e indica se il database già presente deve essere sovrascritto con un nuovo database di default nel momento in cui la piattaforma viene avviata. se ow è presente il database viene sovrascritto.
+I tre parametri che contengono la parola platform indicano rispettivamente: indirizzo ip, porta e nome del database relativi al server in cui il database della backend è in esecuzione.
+Username e password sono le credenziali con le quali avviene il collegamento al database della backend e sono opzionali. Infine broker indica l'indirizzo ip al quale il servizio activemq è in esecuzione. Se il parametro non è presente viene lanciato il broker embedded della piattaforma.
 \subsection{Installazione servizio ActiveMQ esterno}
-Per installare il servizio di activemq è necessario scompattare la cartella che si scarica all'indirizzo http://activemq.apache.org/activemq-5153-release.html. Fatto questo, deve essere lanciato il servizio di activemq da terminale tramite il comando "\\posizione del file\\activemq start".
+Per installare il servizio di activemq è necessario estrarre la cartella che si scarica all'indirizzo http://activemq.apache.org/activemq-5153-release.html. Fatto questo, deve essere lanciato il servizio di activemq da terminale tramite il comando "\\posizione del file\\activemq start".
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{activemq-in-esecuzione.png}
 	\caption*{Figura 21. Istanza di activemq in esecuzione}
 \end{figure}
-\newpage
+\subsection{Interfaccia web Piattaforma}
+La piattaforma ha una interfaccia web che permette di gestire le richieste. In figura 22 viene mostrata la pagina di richiesta che un utente visualizza nel momento in cui vuole abilitare la sua applicazione ad usare la piattaforma, mentre in figura 23 è rappresentata la pagina di gestione delle richieste che mostra cosa l'amministratore della piattaforma vede quando una nuova richiesta viene registrata.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{pagina-di-richiesta.png}
+	\caption*{Figura 22. Pagina di richiesta per utilizzare la piattaforma}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{gestione-delle-richieste.png}
+	\caption*{Figura 23. Pagina di gestione delle richieste}
+\end{figure}
 \section{Possibili sviluppi futuri}
-Come possibili sviluppi futuri sono attualmente previsti la costruzione di un ontologia di dominio Logical System per la piattaforma LSIoT Platform tramite l'utilizzo di Protegè e SKOS (Simple Knowledge Organization System) e l'integrazione della piattaforma con il mondo del big data streaming tramite l'utilizzo di di Apache Flink.
+Come possibili sviluppi futuri sono attualmente previste la costruzione di un ontologia di dominio Logical System per la piattaforma LSIoT Platform tramite l'utilizzo di Protegè e SKOS (Simple Knowledge Organization System) e l'integrazione della piattaforma con il data streaming tramite l'utilizzo di Apache Flink per il monitoraggio degli eventi relativi alle misurazioni.
 \end{document}
