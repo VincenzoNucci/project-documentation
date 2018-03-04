@@ -29,7 +29,7 @@
 },
 {
 	"namespace":"ls.iot.web.services.it",
-	"name":"BynaryLogicalOperator",
+	"name":"BinaryLogicalOperator",
 	"type":"enum",
 	"symbols":["and","or","between","in","like"],
 	"doc":"Operatori logici consentiti."
@@ -77,19 +77,19 @@
 	"fields":[
 		{"name":"applynotformula","type":"boolean","doc":"Indica se l'operazione logica deve essere valutata come negazione."},
 		{"name":"logicaloperator","type":"BeforeLogicalOperator","doc":"Operatore logico da applicare."},
-		{"name":"formula","type":"SubQueryOperation","doc":"Secondo operando, pu\`{o} essere una semplice operazione o una operazione con operando logico"}
+		{"name":"formula","type":"SubQueryOperation","doc":"Secondo operando, puo' essere una semplice operazione o una operazione con operando logico"}
 	]
 },
 {
 	"namespace":"ls.iot.web.services.it",
-	"name":"BynaryLogicalOperatorOperation",
+	"name":"BinaryLogicalOperatorOperation",
 	"type":"record",
 	"fields":[
 		{"name":"applynotformula1","type":"boolean","doc":"Indica se l'operazione logica deve essere valutata come negazione."},
-		{"name":"formula1","type":["string","BynaryLogicalOperatorOperation","BeforeLogicalOperatorOperation","SimpleOperation"],"doc":"Primo operando, pu\`{o} essere una semplice operazione o una operazione con operando logico"},
-		{"name":"logicaloperator","type":"BynaryLogicalOperator","doc":"Operatore logico da applicare."},
+		{"name":"formula1","type":["string","BinaryLogicalOperatorOperation","BeforeLogicalOperatorOperation","SimpleOperation"],"doc":"Primo operando, puo' essere una semplice operazione o una operazione con operando logico"},
+		{"name":"logicaloperator","type":"BinaryLogicalOperator","doc":"Operatore logico da applicare."},
 		{"name":"applynotformula2","type":"boolean","doc":"Indica se l'operazione logica deve essere valutata come negazione."},
-		{"name":"formula2","type":["string","BynaryLogicalOperatorOperation","BeforeLogicalOperatorOperation","SimpleOperation"],"doc":"Secondo operando, pu\`{o} essere una semplice operazione o una operazione con operando logico"}
+		{"name":"formula2","type":["string","BinaryLogicalOperatorOperation","BeforeLogicalOperatorOperation","SimpleOperation"],"doc":"Secondo operando, puo' essere una semplice operazione o una operazione con operando logico"}
 	]
 },
 {
@@ -97,7 +97,7 @@
 	"name":"FormulaOperation",
 	"type":"record",
 	"fields":[
-		{"name":"operation","type":["BynaryLogicalOperatorOperation","BeforeLogicalOperatorOperation","SimpleOperation"],"doc":"La formula descritta come una operazione singola o pi\`{u} operazioni composte."}
+		{"name":"operation","type":["BinaryLogicalOperatorOperation","BeforeLogicalOperatorOperation","SimpleOperation"],"doc":"La formula descritta come una operazione singola o piu' operazioni composte."}
 	]
 },
 {
@@ -125,7 +125,7 @@
 		"name":"RuleRecord",
 		"type": "record",
 		"fields":[
-			{"name":"table", "type":"string","doc":"Tabella che verr\`{a} interrogata."},
+			{"name":"table", "type":"string","doc":"Tabella che verra' interrogata."},
 			{"name":"selectFields", "type":{
 				"type":"array", "items":"string"
 				},
