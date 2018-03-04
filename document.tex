@@ -477,8 +477,11 @@ Il parametro host definisce l'indirizzo ip sul quale sarà in esecuzione la piat
 Il parametro db indica il path del database SQLite di amministrazione. Il comando opzionale ow è un'abbreviazione di overwrite e indica se il database già presente deve essere sovrascritto con un nuovo database di default nel momento in cui la piattaforma viene avviata. se ow è presente il database viene sovrascritto.
 I tre parametri che contengono la parola platform indicano rispettivamente: indirizzo ip, porta e nome del database relativi al server in cui il database della backend è in esecuzione.
 Username e password sono le credenziali con le quali avviene il collegamento al database della backend e sono opzionali. Infine broker indica l'indirizzo ip al quale il servizio activemq è in esecuzione. Se il parametro non è presente viene lanciato il broker embedded della piattaforma.
+\clearpage
 \subsection{Installazione servizio ActiveMQ esterno}
-Per installare il servizio di activemq è necessario estrarre la cartella che si scarica all'indirizzo http://activemq.apache.org/activemq-5153-release.html. Fatto questo, deve essere lanciato il servizio di activemq da terminale tramite il comando "\\posizione del file\\activemq start".
+Per installare il servizio di ActiveMQ è necessario estrarre la cartella che si scarica dal sito ufficiale. Una volta ottenuta la cartella, deve essere lanciato il servizio di activemq da terminale tramite il comando 
+
+$<path-to-activemq>/bin/activemq start$
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{activemq-in-esecuzione.png}
