@@ -475,7 +475,7 @@ I parametri sono:
 {\fontfamily{pcr}\selectfont
 	\lstinputlisting[breaklines]{launch-parameters.txt}
 }
-Il parametro host definisce l'indirizzo ip sul quale sarà in esecuzione la piattaforma, mentre il parametro port definisce la porta.
+Il parametro host definisce l'indirizzo ip sul quale sarà in esecuzione la piattaforma, mentre il parametro port definisce la porta usata dal server per ricevere richieste HTTP.
 Il parametro db indica il path del database SQLite di amministrazione. Il comando opzionale ow è un'abbreviazione di overwrite e indica se il database già presente deve essere sovrascritto con un nuovo database di default nel momento in cui la piattaforma viene avviata. se ow è presente il database viene sovrascritto.
 I tre parametri che contengono la parola platform indicano rispettivamente: indirizzo ip, porta e nome del database relativi al server in cui il database della backend è in esecuzione.
 Username e password sono le credenziali con le quali avviene il collegamento al database della backend e sono opzionali. Infine broker indica l'indirizzo ip al quale il servizio activemq è in esecuzione. Se il parametro non è presente viene lanciato il broker embedded della piattaforma.
