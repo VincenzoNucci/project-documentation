@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.27)  4 MAR 2018 23:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.27)  5 MAR 2018 09:26
 entering extended mode
 **./document.tex
 (document.tex
@@ -694,129 +694,136 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 
 {C:/Users/PC/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/logo.
 png (PNG copy)>]
-("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
+(document.toc)
+\tf@toc=\write4
+\openout4 = `document.toc'.
+
+ [2
+
+] ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-) [1] [2
+)
+[1] [2
 
 ]
-<images/architettura-piattaforma.png, id=26, 588.1975pt x 444.66125pt>
+<images/architettura-piattaforma.png, id=29, 588.1975pt x 444.66125pt>
 File: images/architettura-piattaforma.png Graphic file (type png)
 <use images/architettura-piattaforma.png>
 Package pdftex.def Info: images/architettura-piattaforma.png  used on input lin
-e 137. on input line 137.
+e 138. on input line 138.
 Package pdftex.def Info: Requested size: 375.80544pt x 284.1005pt on input line
- 137.
+ 138.
  [3
 
  <./images/architettura-piattaforma.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 167.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 168.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 168.
 
-Underfull \hbox (badness 2173) in paragraph at lines 167--167
+Underfull \hbox (badness 2173) in paragraph at lines 168--168
 []\OMS/cmsy/m/n/10 f\OT1/cmr/m/it/10 nome ap-pli-cazione\OT1/cmr/m/n/10 , \OT1/
 cmr/m/it/10 IP ap-pli-
  []
 
 [4]
-<images/tabelle-backend.png, id=34, 953.5625pt x 375.4025pt>
+<images/tabelle-backend.png, id=37, 953.5625pt x 375.4025pt>
 File: images/tabelle-backend.png Graphic file (type png)
 <use images/tabelle-backend.png>
-Package pdftex.def Info: images/tabelle-backend.png  used on input line 178. on
- input line 178.
+Package pdftex.def Info: images/tabelle-backend.png  used on input line 179. on
+ input line 179.
 Package pdftex.def Info: Requested size: 375.80544pt x 147.95299pt on input lin
-e 178.
+e 179.
  [5
 
  <./images/tabelle-backend.png>]
-<images/use-case-utente.png, id=38, 923.45pt x 331.2375pt>
+<images/use-case-utente.png, id=42, 923.45pt x 331.2375pt>
 File: images/use-case-utente.png Graphic file (type png)
 <use images/use-case-utente.png>
-Package pdftex.def Info: images/use-case-utente.png  used on input line 193. on
- input line 193.
+Package pdftex.def Info: images/use-case-utente.png  used on input line 194. on
+ input line 194.
 Package pdftex.def Info: Requested size: 375.80544pt x 134.7974pt on input line
- 193.
-<images/use-case-admin.png, id=39, 742.775pt x 220.825pt>
+ 194.
+<images/use-case-admin.png, id=43, 742.775pt x 220.825pt>
 File: images/use-case-admin.png Graphic file (type png)
 <use images/use-case-admin.png>
-Package pdftex.def Info: images/use-case-admin.png  used on input line 200. on 
-input line 200.
+Package pdftex.def Info: images/use-case-admin.png  used on input line 201. on 
+input line 201.
 Package pdftex.def Info: Requested size: 375.80544pt x 111.72633pt on input lin
-e 200.
+e 201.
  [6
 
  <./images/use-case-utente.png (PNG copy)> <./images/use-case-admin.png (PNG co
 py)>]
-<images/sensor-data.png, id=44, 882.29625pt x 387.69844pt>
+<images/sensor-data.png, id=47, 882.29625pt x 387.69844pt>
 File: images/sensor-data.png Graphic file (type png)
 <use images/sensor-data.png>
-Package pdftex.def Info: images/sensor-data.png  used on input line 210. on inp
-ut line 210.
+Package pdftex.def Info: images/sensor-data.png  used on input line 211. on inp
+ut line 211.
 Package pdftex.def Info: Requested size: 375.80544pt x 165.13347pt on input lin
-e 210.
+e 211.
  [7
 
  <./images/sensor-data.png>]
-<images/subscribe-thread.png, id=48, 934.24031pt x 398.23781pt>
+<images/subscribe-thread.png, id=51, 934.24031pt x 398.23781pt>
 File: images/subscribe-thread.png Graphic file (type png)
 <use images/subscribe-thread.png>
-Package pdftex.def Info: images/subscribe-thread.png  used on input line 217. o
-n input line 217.
+Package pdftex.def Info: images/subscribe-thread.png  used on input line 218. o
+n input line 218.
 Package pdftex.def Info: Requested size: 375.80544pt x 160.19164pt on input lin
-e 217.
-<images/sensor-data-annotation.png, id=49, 934.99312pt x 404.26031pt>
+e 218.
+<images/sensor-data-annotation.png, id=52, 934.99312pt x 404.26031pt>
 File: images/sensor-data-annotation.png Graphic file (type png)
 <use images/sensor-data-annotation.png>
 Package pdftex.def Info: images/sensor-data-annotation.png  used on input line 
-225. on input line 225.
+226. on input line 226.
 Package pdftex.def Info: Requested size: 375.80544pt x 162.48465pt on input lin
-e 225.
+e 226.
 
 [8
 
  <./images/subscribe-thread.png> <./images/sensor-data-annotation.png>]
-<images/subscribe-result.png, id=53, 706.89093pt x 405.01312pt>
+<images/subscribe-result.png, id=56, 706.89093pt x 405.01312pt>
 File: images/subscribe-result.png Graphic file (type png)
 <use images/subscribe-result.png>
-Package pdftex.def Info: images/subscribe-result.png  used on input line 232. o
-n input line 232.
+Package pdftex.def Info: images/subscribe-result.png  used on input line 233. o
+n input line 233.
 Package pdftex.def Info: Requested size: 375.80544pt x 215.31718pt on input lin
-e 232.
-<images/rule-record.png, id=54, 746.03719pt x 393.72093pt>
+e 233.
+<images/rule-record.png, id=57, 746.03719pt x 393.72093pt>
 File: images/rule-record.png Graphic file (type png)
 <use images/rule-record.png>
-Package pdftex.def Info: images/rule-record.png  used on input line 239. on inp
-ut line 239.
+Package pdftex.def Info: images/rule-record.png  used on input line 240. on inp
+ut line 240.
 Package pdftex.def Info: Requested size: 375.80544pt x 198.33186pt on input lin
-e 239.
+e 240.
 
 [9
 
  <./images/subscribe-result.png> <./images/rule-record.png>]
-<images/rules.png, id=58, 914.66719pt x 398.99063pt>
+<images/rules.png, id=61, 914.66719pt x 398.99063pt>
 File: images/rules.png Graphic file (type png)
 <use images/rules.png>
-Package pdftex.def Info: images/rules.png  used on input line 247. on input lin
-e 247.
+Package pdftex.def Info: images/rules.png  used on input line 248. on input lin
+e 248.
 Package pdftex.def Info: Requested size: 375.80544pt x 163.92815pt on input lin
-e 247.
+e 248.
  [10 <./images/rules.png>]
-<images/main.png, id=62, 597.73312pt x 400.49625pt>
+<images/main.png, id=65, 597.73312pt x 400.49625pt>
 File: images/main.png Graphic file (type png)
 <use images/main.png>
-Package pdftex.def Info: images/main.png  used on input line 256. on input line
- 256.
+Package pdftex.def Info: images/main.png  used on input line 257. on input line
+ 257.
 Package pdftex.def Info: Requested size: 375.80544pt x 251.80064pt on input lin
-e 256.
+e 257.
  [11
 
  <./images/main.png>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 269.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 270.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
@@ -825,163 +832,162 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 [12
 
 ]) [13] (subscribe-rule.txt [14] [15] [16])
-Overfull \hbox (14.5213pt too wide) in paragraph at lines 285--286
+Overfull \hbox (14.5213pt too wide) in paragraph at lines 286--287
 []\OT1/cmr/m/n/10 Nel mes-sag-gio JSON che il servizio di sub-scribe riceve vie
 ne spec-i-fi-cato, il nome e l'indirizzo IP dell'applicativo
  []
 
 [17]
-<images/struttura-query-tree.png, id=86, 1365.1pt x 648.4225pt>
+<images/struttura-query-tree.png, id=90, 1365.1pt x 648.4225pt>
 File: images/struttura-query-tree.png Graphic file (type png)
 <use images/struttura-query-tree.png>
 Package pdftex.def Info: images/struttura-query-tree.png  used on input line 30
-2. on input line 302.
+3. on input line 303.
 Package pdftex.def Info: Requested size: 375.80544pt x 178.49977pt on input lin
-e 302.
+e 303.
  [18
 
  <./images/struttura-query-tree.png>]
-<images/subscribe-json-1.png, id=91, 368.87813pt x 392.21532pt>
+<images/subscribe-json-1.png, id=94, 368.87813pt x 392.21532pt>
 File: images/subscribe-json-1.png Graphic file (type png)
 <use images/subscribe-json-1.png>
-Package pdftex.def Info: images/subscribe-json-1.png  used on input line 309. o
-n input line 309.
+Package pdftex.def Info: images/subscribe-json-1.png  used on input line 310. o
+n input line 310.
 Package pdftex.def Info: Requested size: 187.89914pt x 199.78777pt on input lin
-e 309.
+e 310.
  (subscribe-rule-nav.txt)
-<images/subscribe-json-2.png, id=92, 210.7875pt x 197.98969pt>
+<images/subscribe-json-2.png, id=95, 210.7875pt x 197.98969pt>
 File: images/subscribe-json-2.png Graphic file (type png)
 <use images/subscribe-json-2.png>
-Package pdftex.def Info: images/subscribe-json-2.png  used on input line 324. o
-n input line 324.
+Package pdftex.def Info: images/subscribe-json-2.png  used on input line 325. o
+n input line 325.
 Package pdftex.def Info: Requested size: 187.89914pt x 176.49423pt on input lin
-e 324.
+e 325.
  [19
 
  <./images/subscribe-json-1.png>] (subscribe-result.txt) [20 <./images/subscrib
 e-json-2.png>] [21] (exception-handler.txt)
-<images/db-rules.png, id=102, 968.86969pt x 484.05844pt>
+<images/db-rules.png, id=105, 968.86969pt x 484.05844pt>
 File: images/db-rules.png Graphic file (type png)
 <use images/db-rules.png>
-Package pdftex.def Info: images/db-rules.png  used on input line 367. on input 
-line 367.
+Package pdftex.def Info: images/db-rules.png  used on input line 368. on input 
+line 368.
 Package pdftex.def Info: Requested size: 375.80544pt x 187.75536pt on input lin
-e 367.
+e 368.
  [22
 
  <./images/db-rules.png>]
 (espressione-cron.txt) [23
 
 ] [24]
-<images/class-diagram-client.png, id=113, 739.26187pt x 1489.81593pt>
+<images/class-diagram-client.png, id=116, 739.26187pt x 1489.81593pt>
 File: images/class-diagram-client.png Graphic file (type png)
 <use images/class-diagram-client.png>
 Package pdftex.def Info: images/class-diagram-client.png  used on input line 40
-4. on input line 404.
+5. on input line 405.
 Package pdftex.def Info: Requested size: 220.78543pt x 444.94775pt on input lin
-e 404.
+e 405.
  [25
 
  <./images/class-diagram-client.png>]
 [26
 
 ]
-<images/deserialize.png, id=120, 718.93594pt x 62.48344pt>
+<images/deserialize.png, id=123, 718.93594pt x 62.48344pt>
 File: images/deserialize.png Graphic file (type png)
 <use images/deserialize.png>
-Package pdftex.def Info: images/deserialize.png  used on input line 430. on inp
-ut line 430.
+Package pdftex.def Info: images/deserialize.png  used on input line 431. on inp
+ut line 431.
 Package pdftex.def Info: Requested size: 375.80544pt x 32.66223pt on input line
- 430.
+ 431.
  [27
 
- <./images/deserialize.png>] [28]
-<images/PLC-Assigment-List.png, id=128, 1028.34187pt x 547.2947pt>
+ <./images/deserialize.png>] [28] [29]
+<images/PLC-Assigment-List.png, id=135, 1028.34187pt x 547.2947pt>
 File: images/PLC-Assigment-List.png Graphic file (type png)
 <use images/PLC-Assigment-List.png>
-Package pdftex.def Info: images/PLC-Assigment-List.png  used on input line 452.
- on input line 452.
+Package pdftex.def Info: images/PLC-Assigment-List.png  used on input line 453.
+ on input line 453.
 Package pdftex.def Info: Requested size: 375.80544pt x 200.00725pt on input lin
-e 452.
- [29] [30 <./images/PLC-Assigment-List.png>]
-<images/PLC-Reading-List.png, id=136, 1028.34187pt x 547.2947pt>
+e 453.
+ [30
+
+ <./images/PLC-Assigment-List.png>]
+<images/PLC-Reading-List.png, id=139, 1028.34187pt x 547.2947pt>
 File: images/PLC-Reading-List.png Graphic file (type png)
 <use images/PLC-Reading-List.png>
-Package pdftex.def Info: images/PLC-Reading-List.png  used on input line 458. o
-n input line 458.
+Package pdftex.def Info: images/PLC-Reading-List.png  used on input line 459. o
+n input line 459.
 Package pdftex.def Info: Requested size: 375.80544pt x 200.00725pt on input lin
-e 458.
+e 459.
  [31
 
  <./images/PLC-Reading-List.png>]
-<images/lancio-piattaforma.png, id=140, 509.65407pt x 257.46187pt>
+<images/lancio-piattaforma.png, id=143, 509.65407pt x 257.46187pt>
 File: images/lancio-piattaforma.png Graphic file (type png)
 <use images/lancio-piattaforma.png>
-Package pdftex.def Info: images/lancio-piattaforma.png  used on input line 468.
- on input line 468.
+Package pdftex.def Info: images/lancio-piattaforma.png  used on input line 469.
+ on input line 469.
 Package pdftex.def Info: Requested size: 375.80544pt x 189.85486pt on input lin
-e 468.
+e 469.
  (launch-parameters.txt) [32
 
  <./images/lancio-piattaforma.png>]
-<images/activemq-in-esecuzione.png, id=146, 509.65407pt x 257.46187pt>
+<images/activemq-in-esecuzione.png, id=149, 509.65407pt x 257.46187pt>
 File: images/activemq-in-esecuzione.png Graphic file (type png)
 <use images/activemq-in-esecuzione.png>
 Package pdftex.def Info: images/activemq-in-esecuzione.png  used on input line 
-487. on input line 487.
+488. on input line 488.
 Package pdftex.def Info: Requested size: 375.80544pt x 189.85486pt on input lin
-e 487.
-<images/pagina-di-richiesta.png, id=147, 987.69pt x 578.16pt>
+e 488.
+ [33
+
+ <./images/activemq-in-esecuzione.png>]
+<images/pagina-di-richiesta.png, id=155, 987.69pt x 578.16pt>
 File: images/pagina-di-richiesta.png Graphic file (type png)
 <use images/pagina-di-richiesta.png>
-Package pdftex.def Info: images/pagina-di-richiesta.png  used on input line 494
-. on input line 494.
-Package pdftex.def Info: Requested size: 375.80544pt x 219.97656pt on input lin
-e 494.
-<images/gestione-delle-richieste.png, id=148, 987.69pt x 578.16pt>
+Package pdftex.def Info: images/pagina-di-richiesta.png  used on input line 496
+. on input line 496.
+Package pdftex.def Info: Requested size: 352.31625pt x 206.23189pt on input lin
+e 496.
+<images/gestione-delle-richieste.png, id=156, 987.69pt x 578.16pt>
 File: images/gestione-delle-richieste.png Graphic file (type png)
 <use images/gestione-delle-richieste.png>
 Package pdftex.def Info: images/gestione-delle-richieste.png  used on input lin
-e 499. on input line 499.
-Package pdftex.def Info: Requested size: 375.80544pt x 219.97656pt on input lin
-e 499.
+e 501. on input line 501.
+Package pdftex.def Info: Requested size: 352.31625pt x 206.23189pt on input lin
+e 501.
+ [34
 
+ <./images/pagina-di-richiesta.png> <./images/gestione-delle-richieste.png>]
+[35
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[33
-
- <./images/activemq-in-esecuzione.png>] [34 <./images/pagina-di-richiesta.png> 
-<./images/gestione-delle-richieste.png>] (document.aux) ) 
+] (document.aux) ) 
 Here is how much of TeX's memory you used:
- 16874 strings out of 493312
- 314725 string characters out of 3138908
+ 16877 strings out of 493312
+ 314778 string characters out of 3138908
  432994 words of memory out of 3000000
  20062 multiletter control sequences out of 15000+200000
  11238 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,8n,77p,5333b,1603s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKT
-eX 2.9/fonts/enc/dvips/base/8r.enc} <C:\Users\PC\AppData\Local\MiKTeX\2.9\fonts
-\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.p
-fb>
-Output written on document.pdf (35 pages, 960713 bytes).
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc} <C:
+\Users\PC\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.
+pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on document.pdf (37 pages, 967631 bytes).
 PDF statistics:
- 204 PDF objects out of 1000 (max. 8388607)
+ 213 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
