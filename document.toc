@@ -1,0 +1,27 @@
+\contentsline {section}{\numberline {1}Obiettivi}{1}
+\contentsline {section}{\numberline {2}Visione}{1}
+\contentsline {section}{\numberline {3}Introduzione}{1}
+\contentsline {section}{\numberline {4}Paradigmi, protocolli e strumenti utilizzati}{2}
+\contentsline {section}{\numberline {5}Architettura Piattaforma}{3}
+\contentsline {subsection}{\numberline {5.1}Database Use Case Aziendale}{5}
+\contentsline {subsection}{\numberline {5.2}Use Case Diagram}{6}
+\contentsline {subsection}{\numberline {5.3}Class Diagram}{7}
+\contentsline {section}{\numberline {6}Struttura Dati Json}{12}
+\contentsline {subsection}{\numberline {6.1}Struttura della regola di subscribe}{14}
+\contentsline {subsection}{\numberline {6.2}Struttura della Condition}{18}
+\contentsline {section}{\numberline {7}Servizio di Subscribe}{20}
+\contentsline {section}{\numberline {8}Token Authentication}{21}
+\contentsline {section}{\numberline {9}Gestione degli errori}{22}
+\contentsline {subsection}{\numberline {9.1}Schema Avro}{22}
+\contentsline {section}{\numberline {10}Database Amministrativo}{22}
+\contentsline {section}{\numberline {11}Espressioni CRON}{23}
+\contentsline {section}{\numberline {12}Architettura Lato Client}{23}
+\contentsline {subsection}{\numberline {12.1}Breve Introduzione su Microsoft Dynamics NAV}{23}
+\contentsline {section}{\numberline {13}Client C\#}{24}
+\contentsline {subsection}{\numberline {13.1}Class Diagram}{25}
+\contentsline {subsection}{\numberline {13.2}Case Study e implementazione lato client}{28}
+\contentsline {section}{\numberline {14}Manualistica}{31}
+\contentsline {subsection}{\numberline {14.1}Installazione e avvio della piattaforma}{31}
+\contentsline {subsection}{\numberline {14.2}Installazione servizio ActiveMQ esterno}{32}
+\contentsline {subsection}{\numberline {14.3}Interfaccia web Piattaforma}{33}
+\contentsline {section}{\numberline {15}Possibili sviluppi futuri}{34}
