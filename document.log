@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.27)  5 MAR 2018 09:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.27)  5 MAR 2018 09:39
 entering extended mode
 **./document.tex
 (document.tex
@@ -910,59 +910,57 @@ Package pdftex.def Info: images/PLC-Assigment-List.png  used on input line 453.
  on input line 453.
 Package pdftex.def Info: Requested size: 375.80544pt x 200.00725pt on input lin
 e 453.
- [30
-
- <./images/PLC-Assigment-List.png>]
-<images/PLC-Reading-List.png, id=139, 1028.34187pt x 547.2947pt>
+<images/PLC-Reading-List.png, id=136, 1028.34187pt x 547.2947pt>
 File: images/PLC-Reading-List.png Graphic file (type png)
 <use images/PLC-Reading-List.png>
 Package pdftex.def Info: images/PLC-Reading-List.png  used on input line 459. o
 n input line 459.
 Package pdftex.def Info: Requested size: 375.80544pt x 200.00725pt on input lin
 e 459.
- [31
+ [30
 
- <./images/PLC-Reading-List.png>]
-<images/lancio-piattaforma.png, id=143, 509.65407pt x 257.46187pt>
+ <./images/PLC-Assigment-List.png> <./images/PLC-Reading-List.png>]
+<images/lancio-piattaforma.png, id=140, 509.65407pt x 257.46187pt>
 File: images/lancio-piattaforma.png Graphic file (type png)
 <use images/lancio-piattaforma.png>
-Package pdftex.def Info: images/lancio-piattaforma.png  used on input line 469.
- on input line 469.
+Package pdftex.def Info: images/lancio-piattaforma.png  used on input line 470.
+ on input line 470.
 Package pdftex.def Info: Requested size: 375.80544pt x 189.85486pt on input lin
-e 469.
- (launch-parameters.txt) [32
+e 470.
+ (launch-parameters.txt) [31
 
  <./images/lancio-piattaforma.png>]
-<images/activemq-in-esecuzione.png, id=149, 509.65407pt x 257.46187pt>
+<images/activemq-in-esecuzione.png, id=146, 509.65407pt x 257.46187pt>
 File: images/activemq-in-esecuzione.png Graphic file (type png)
 <use images/activemq-in-esecuzione.png>
 Package pdftex.def Info: images/activemq-in-esecuzione.png  used on input line 
-488. on input line 488.
+489. on input line 489.
 Package pdftex.def Info: Requested size: 375.80544pt x 189.85486pt on input lin
-e 488.
- [33
+e 489.
+ [32
 
  <./images/activemq-in-esecuzione.png>]
-<images/pagina-di-richiesta.png, id=155, 987.69pt x 578.16pt>
+<images/pagina-di-richiesta.png, id=152, 987.69pt x 578.16pt>
 File: images/pagina-di-richiesta.png Graphic file (type png)
 <use images/pagina-di-richiesta.png>
-Package pdftex.def Info: images/pagina-di-richiesta.png  used on input line 496
-. on input line 496.
+Package pdftex.def Info: images/pagina-di-richiesta.png  used on input line 497
+. on input line 497.
 Package pdftex.def Info: Requested size: 352.31625pt x 206.23189pt on input lin
-e 496.
-<images/gestione-delle-richieste.png, id=156, 987.69pt x 578.16pt>
+e 497.
+<images/gestione-delle-richieste.png, id=153, 987.69pt x 578.16pt>
 File: images/gestione-delle-richieste.png Graphic file (type png)
 <use images/gestione-delle-richieste.png>
 Package pdftex.def Info: images/gestione-delle-richieste.png  used on input lin
-e 501. on input line 501.
+e 502. on input line 502.
 Package pdftex.def Info: Requested size: 352.31625pt x 206.23189pt on input lin
-e 501.
- [34
+e 502.
+ [33
 
- <./images/pagina-di-richiesta.png> <./images/gestione-delle-richieste.png>]
-[35
+ <./images/pagina-di-richiesta.png> <./images/gestione-delle-richieste.png>] [3
+4
 
-] (document.aux) ) 
+]
+(document.aux) ) 
 Here is how much of TeX's memory you used:
  16877 strings out of 493312
  314778 string characters out of 3138908
@@ -971,23 +969,23 @@ Here is how much of TeX's memory you used:
  11238 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,8n,77p,5333b,1603s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc} <C:
-\Users\PC\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.
-pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on document.pdf (37 pages, 967631 bytes).
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc} <C:\U
+sers\PC\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on document.pdf (36 pages, 966760 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
+ 207 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

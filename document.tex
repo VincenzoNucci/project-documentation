@@ -453,12 +453,13 @@ L’approccio legato ai PLC è stato fatto per rendere il PLC stesso uno “smar
 	\includegraphics[width=0.8\textwidth]{PLC-Assigment-List.png}
 	\caption*{Figura 18. La pagina PLC Parameter Assignment, dalla quale si impostano i valori da richiedere}
 \end{figure}
-\clearpage
-\begin{figure}[H]
+
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{PLC-Reading-List.png}
 	\caption*{Figura 19. La pagina PLC Parameter Reading, dalla quale si visualizzano i valori richiesti}
 \end{figure}
+
 Per poter effettuare il servizio di sottoscrizione in NAV è stata generata la pagina SubscriptionPage, nella quale è presente la possibilità di scrivere le condizioni sulle quali si vogliono i dati (la clausola con cui si faranno chiamate in SQL), e si lancia una page action collegata alla codeunit con la quale si effettua il metodo di sottoscrizione in base alle informazioni riportate in input. Una volta ricevuta la risposta, in caso di esito affermativo, si prende il numero della sottoscrizione e si setta in tabella, impostando inoltre lo stato come attivo. Per cancellare una sottoscrizione è possibile dunque utilizzare la page action unsubscribe che partendo dal dato messo in tabella come ID Sottoscrizione lo invia alla piattaforma che procederà dunque a cancellare la sottoscrizione relativa. 
 \clearpage
 \section{Manualistica}
